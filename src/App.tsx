@@ -27,6 +27,7 @@ function App() {
             <Sobrenos />
           </Route>
         </div>
+        <Footer />
       </Switch>
     </Router>
   );
