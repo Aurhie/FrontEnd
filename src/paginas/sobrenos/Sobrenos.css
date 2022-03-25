@@ -1,0 +1,22 @@
+.icon{
+    font-size: 150px !important;
+}
+
+.integrante{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+    padding: 20px;
+    border: 2px ;
+    background-color: lightgray;
+    border-radius: 7px;
+}
+
+.nomes{
+    margin: 10px !important;
+}
+
+.redes{
+    margin: 0 10px;
+    font-size: 35px !important;
+}
