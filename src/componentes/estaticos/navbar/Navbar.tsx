@@ -40,6 +40,13 @@ function Navbar() {
                                 Cadastrar tema
                             </Typography>
                         </Box>
+                        <Link to='/sobre-nos' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h5" color="inherit">
+                                    Sobre nós
+                                </Typography>
+                            </Box>
+                        </Link>
 
                         <Link to='/login' className='text-decorator-none'>
                             <Box mx={1} style={{ cursor: "pointer", color: 'white' }} >
