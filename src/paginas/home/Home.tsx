@@ -18,7 +18,7 @@ function Home(){
                     </Box>
                 </Grid>                
                 <Grid item xs={6}>
-                  <img src="https://www.kbrtec.com.br/blog/wp-content/uploads/2021/06/por-que-ter-um-blog-em-santos-kbr-tec.jpg" alt="" width="500px" height="400px" />
+                  <img src="https://i.imgur.com/KDZ0exd.png" alt="" width="500px" height="400px" />
                     
                 </Grid>
                 <Grid xs={12} style={{ backgroundColor: "white" }}>
