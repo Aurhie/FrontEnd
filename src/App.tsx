@@ -23,12 +23,12 @@ function App() {
           <Route path='/home'>
             <Home />
           </Route>
-          <Route path='sobre-nos'>
+          <Route path='/sobre-nos'>
             <Sobrenos />
           </Route>
         </div>
-        <Footer />
       </Switch>
+      <Footer />
     </Router>
   );
 }
