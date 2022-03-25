@@ -66,8 +66,6 @@ function Sobrenos() {
                         </Box>
                     </Box>
                 </Grid>
-                <Grid item xs={6} className="imagem">
-                </Grid>
             </Grid>
             <Grid item container direction='row' justifyContent='center' alignItems="center">
                 <Grid item xs={3} alignItems="center">
