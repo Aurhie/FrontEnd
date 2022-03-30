@@ -131,7 +131,7 @@ function CadastroUsuario() {
                         </TextField>
 
                         <TextField
-                            value={user.foto}
+                            value={user.tipo}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
                             id='tipo'
                             label='tipo de usuario'
@@ -139,6 +139,7 @@ function CadastroUsuario() {
                             name='tipo'
                             margin="normal"
                             required
+                            placeholder="Exemplo: Aluno ou Mentor"
                             fullWidth>
                         </TextField>
 
