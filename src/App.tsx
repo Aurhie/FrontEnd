@@ -6,6 +6,7 @@ import Home from './paginas/home/Home'
 import Login from './paginas/login/Login'
 import Sobrenos from './paginas/sobrenos/Sobrenos'
 import Footer from './componentes/estaticos/footer/Footer';
+import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import './App.css';
 
 function App() {
@@ -14,19 +15,29 @@ function App() {
       <Navbar />
       <Switch>
         <div>
+
           <Route path='/login'>
             <Login />
           </Route>
+
           <Route exact path='/'>
             <Login />
           </Route>
+
           <Route path='/home'>
             <Home />
           </Route>
+
           <Route path='/sobre-nos'>
             <Sobrenos />
           </Route>
+
+          <Route path='/cadastroUsuario'>
+              <CadastroUsuario />
+            </Route>
+
         </div>
+
       </Switch>
       <Footer />
     </Router>
