@@ -32,7 +32,7 @@ function App() {
             <Sobrenos />
           </Route>
 
-          <Route path='/cadastroUsuario'>
+          <Route path='/cadastrousuario'>
               <CadastroUsuario />
             </Route>
 
