@@ -115,6 +115,7 @@ function CadastroUsuario() {
                             name='usuario'
                             margin='normal'
                             type = 'email'
+                            placeholder="Exemplo: usuario@email.com"
                             required
                             fullWidth>
                         </TextField>
@@ -139,7 +140,7 @@ function CadastroUsuario() {
                             name='tipo'
                             margin="normal"
                             required
-                            placeholder="Exemplo: Aluno ou Mentor"
+                            placeholder="Exemplo: Alune ou Voluntárie"
                             fullWidth>
                         </TextField>
 
