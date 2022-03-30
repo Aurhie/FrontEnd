@@ -57,12 +57,26 @@ function CadastroUsuario() {
     async function cadastrar(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
         if(confirmarSenha === user.senha && user.senha.length >= 8){
-        await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-        alert('Usuario cadastrado com sucesso')
-        }else{
-            alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
+        //Tenta executar o cadastro
+        try {
+            await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+            alert("Usuário cadastrado com sucesso")
+
+        //Se houver erro, pegue o Erro e retorna uma mensagem (alert)
+        } catch (error) {
+            
+            //Pode modificar a mensagem de acordo com o erro 
+            alert("Usuário já existente")
         }
+
+    } else {
+        alert("Dados inconsistentes")
+
+        setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
+        setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha
     }
+}
+
     
     return (
         <Grid container direction="row" justifyContent="center" alignItems="center">
