@@ -17,8 +17,9 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
+            foto:'',
             senha: '',
-            foto:''
+            tipo:''
         })
     
     /*Atualiza a partir da resposta do back-end*/
@@ -27,8 +28,9 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
+            foto:'',
             senha: '',
-            foto:''
+            tipo:''
         })
 
     useEffect(() => {
@@ -125,6 +127,18 @@ function CadastroUsuario() {
                             variant='outlined'
                             name='foto'
                             margin="normal"
+                            fullWidth>
+                        </TextField>
+
+                        <TextField
+                            value={user.foto}
+                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            id='tipo'
+                            label='tipo de usuario'
+                            variant='outlined'
+                            name='tipo'
+                            margin="normal"
+                            required
                             fullWidth>
                         </TextField>
 
