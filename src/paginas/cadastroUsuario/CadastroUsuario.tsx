@@ -103,6 +103,7 @@ function CadastroUsuario() {
                             name='nome'
                             margin="normal"
                             required
+                            placeholder="Digite o seu nome completo"
                             fullWidth>
                         </TextField>
 
@@ -128,6 +129,7 @@ function CadastroUsuario() {
                             variant='outlined'
                             name='foto'
                             margin="normal"
+                            placeholder="Insira o link da sua foto"
                             fullWidth>
                         </TextField>
 
@@ -154,6 +156,7 @@ function CadastroUsuario() {
                             margin="normal"
                             type='password'
                             required
+                            placeholder="Sua senha deve ter pelo menos 8 caracteres"
                             fullWidth>
                         </TextField>
 
@@ -167,6 +170,7 @@ function CadastroUsuario() {
                             margin='normal'
                             type='password'
                             required
+                            placeholder="Digite novamente a sua senha"
                             fullWidth>
                         </TextField>
 

@@ -94,7 +94,7 @@ function Sobrenos() {
                     </Grid>
                     <Grid item xs={4} alignItems="center">
                         <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" className="integrante">
-                            <img src="https://media-exp1.licdn.com/dms/image/C5603AQE2aGJb-3c7wA/profile-displayphoto-shrink_400_400/0/1620944903884?e=1653523200&v=beta&t=FODLjtN3EQskxio-Xmvje6rNUksGGjRRBRsLuGBFPKQ" alt="Foto de perfil de Sarah Ramos" className="icon" />
+                            <img src="https://avatars.githubusercontent.com/u/98063540?v=4" alt="Foto de perfil de Sarah Ramos" className="icon" />
                             <Typography variant="h5" className="nomes">Sarah Ramos</Typography>
                             <Box>
                                 <a href="https://github.com/sarahprog" target="_blank">

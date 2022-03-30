@@ -1,7 +1,7 @@
 .icon{
     font-size: 150px !important;
     width: 150px;
-    /* border-radius: 120px; */
+    /* border-radius: 120% !important; */
     padding: 20px 0 0px 0;
     border-top-left-radius: 170px;
     border-top-right-radius: 170px;

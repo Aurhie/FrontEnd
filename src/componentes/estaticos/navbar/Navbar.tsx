@@ -8,10 +8,11 @@ function Navbar() {
         <>
             <AppBar position="static">
                 <Toolbar variant="dense">
-                    <Box mx={1} className='cursor' >
-                        <Typography variant="h5" color="inherit">
+                    <Box mx={1} className='cursor logo'>
+                        
+                        {/* <Typography variant="h5" color="inherit">
                             Colaboratech
-                        </Typography>
+                        </Typography> */}
                     </Box>
                     <Box display='flex' justifyContent='start'>
                     <Link to='/home' className='text-decorator-none'>
