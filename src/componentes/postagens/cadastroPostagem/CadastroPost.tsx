@@ -5,6 +5,7 @@ import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
 import { busca, buscaId, post, put } from '../../../service/Service';
+import './CadastroPost.css'
 
 function CadastroPost() {
 
@@ -106,7 +107,7 @@ function CadastroPost() {
     }
 
     function back() {
-        history.push("/posts")
+        history.push("/postagens")
     }
 
 
@@ -145,7 +146,7 @@ function CadastroPost() {
 
                         {
                             temas.map(item => (
-                                <MenuItem value={item.id}>{item.descricao}</MenuItem>
+                                <MenuItem value={item.id}>{item.nome}</MenuItem>
                             ))
                         }
 
