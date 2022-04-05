@@ -1,6 +1,9 @@
 interface Tema{
-    id: number
-    descricao: string
+    
+    id: number;
+    nome:string;
+    descricao: string;
+    postagem?: [{}]
 }
 
 export default Tema
