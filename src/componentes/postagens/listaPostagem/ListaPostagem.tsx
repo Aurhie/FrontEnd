@@ -56,7 +56,7 @@ function ListaPostagem() {
                                 </Typography>
 
                                 <Typography variant='body2' component='p'>
-                                    {postagem.tema?.descricao}
+                                    {postagem.tema?.nome}
                                 </Typography>
                             </CardContent>
 
