@@ -68,11 +68,11 @@ function App() {
             <CadastroTema />
           </Route>
             
-          <Route  exact path='/postagens/:id'>
+          <Route  exact path='/DeletarPostagem/:id'>
             <DeletarPostagem />
           </Route>
 
-          <Route exact path='/temas/:id'>
+          <Route exact path='/DeletarTema/:id'>
             <DeletarTema />
           </Route>
 

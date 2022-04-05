@@ -58,7 +58,7 @@ function CadastroPost() {
     }
 
     async function findByIdPostagem(id: string) {
-        await buscaId(`postagem/${id}`, setPostagem, {
+        await buscaId(`postagens/${id}`, setPostagem, {
             headers: {
                 "Authorization": token
             }
