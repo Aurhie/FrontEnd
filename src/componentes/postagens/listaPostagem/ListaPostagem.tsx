@@ -58,7 +58,21 @@ return (
 
                         <CardActions>
                             <Box display='flex' justifyContent='center' mb={1.5}>
-                                <Link to={`/formularioPostagem/${postagem.id}`}></Link>
+                                <Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
+                                    <Box mx={1}>
+                                        <Button className='btn-atualizar'>
+                                            Atualizar
+                                        </Button>
+                                    </Box>
+                                </Link>
+
+                                <Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
+                                    <Box mx={1}>
+                                        <Button className='btn-deletar'>
+                                            Deletar
+                                        </Button>
+                                    </Box>
+                                </Link>
                             </Box>
                         </CardActions>
                     </Card>
