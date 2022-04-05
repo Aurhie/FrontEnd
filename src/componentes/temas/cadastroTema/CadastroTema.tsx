@@ -44,6 +44,7 @@ function CadastroTema() {
         setTema({
             ...tema,
             [e.target.name]: e.target.value,
+            
         })
 
     }
@@ -54,6 +55,10 @@ function CadastroTema() {
 
         if (id !== undefined) {
             console.log(tema)
+            setTema({
+                ...tema,
+                postagem: [{}]
+            })
             put(`/temas`, tema, setTema, {
                 headers: {
                     'Authorization': token
