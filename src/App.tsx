@@ -9,7 +9,7 @@ import Footer from './componentes/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import ListaTema from './componentes/temas/listaTema/ListaTema';
 import ListaPostagem from './componentes/postagens/listaPostagem/ListaPostagem';
-import CadastroPost from './componentes/postagens/cadastroPostagem/CadastroPost';
+import CadastroPostagem from './componentes/postagens/cadastroPostagem/CadastroPost';
 import CadastroTema from './componentes/temas/cadastroTema/CadastroTema';
  
 import './App.css';
@@ -51,11 +51,11 @@ function App() {
           </Route>
 
           <Route exact path='/formularioPostagem'>
-            <CadastroPost />
+            <CadastroPostagem />
           </Route>
 
           <Route exact path='/formularioPostagem/:id'>
-            <CadastroPost />
+            <CadastroPostagem />
           </Route>
 
           <Route exact path='/formularioTema'>
