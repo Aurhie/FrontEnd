@@ -15,34 +15,39 @@ function Navbar() {
                         </Typography> */}
                     </Box>
                     <Box display='flex' justifyContent='start'>
-                    <Link to='/home' className='text-decorator-none'>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
-                                Home
-                            </Typography>
-                        </Box>
+                        <Link to='/home' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h5" color="inherit">
+                                    Home
+                                </Typography>
+                            </Box>
                         </Link>
 
+                        <Link to='/postagens' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h5" color="inherit">
+                                    Postagens
+                                </Typography>
+                            </Box>
+                        </Link>
 
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
-                                Postagens
-                            </Typography>
-                        </Box>
+                        <Link to='/temas' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h5" color="inherit">
+                                    Temas
+                                </Typography>
 
+                            </Box>
+                        </Link>
 
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
-                                Temas
-                            </Typography>
+                        <Link to='/formularioTema' className='text-decorator-none'>
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h5" color="inherit">
+                                    Cadastrar tema
+                                </Typography>
+                            </Box>
+                        </Link>
 
-                        </Box>
-
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
-                                Cadastrar tema
-                            </Typography>
-                        </Box>
                         <Link to='/sobre-nos' className='text-decorator-none'>
                             <Box mx={1} className='cursor'>
                                 <Typography variant="h5" color="inherit">
@@ -54,7 +59,7 @@ function Navbar() {
                         <Link to='/login' className='text-decorator-none'>
                             <Box mx={1} style={{ cursor: "pointer", color: 'white' }} >
                                 <Typography variant="h5" color="inherit">
-                                    logout
+                                    Logout
                                 </Typography>
                             </Box>
 

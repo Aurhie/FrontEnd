@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography'
 import { Box, Card, CardActions, Button, CardContent } from "@material-ui/core";
 import { busca } from "../../../service/Service";
 import Postagem from "../../../models/Postagem";
+import './ListaPostagem.css'
 
 
 function ListaPostagem() {
@@ -23,7 +24,7 @@ function ListaPostagem() {
     }, [token])
 
     async function getPost() {
-        await busca('/posts', setPostagens, {
+        await busca('/postagens', setPostagens, {
             headers: {
                 'Authorization': token
             }

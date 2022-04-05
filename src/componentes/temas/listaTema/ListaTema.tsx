@@ -4,6 +4,7 @@ import useLocalStorage from "react-use-localstorage";
 import { Box, Button, Card, CardActions, CardContent, Typography } from "@material-ui/core";
 import Tema from "../../../models/Tema";
 import { busca } from "../../../service/Service";
+import './ListaTema.css'
 
 function ListaTema() {
 
@@ -22,7 +23,7 @@ function ListaTema() {
 
 
     async function getTema() {
-        await busca('/tema', setTemas, {
+        await busca('/temas', setTemas, {
             headers: {
                 'Authorization': token
             }
