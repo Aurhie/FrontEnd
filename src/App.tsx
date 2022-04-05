@@ -7,7 +7,13 @@ import Login from './paginas/login/Login'
 import Sobrenos from './paginas/sobrenos/Sobrenos'
 import Footer from './componentes/estaticos/footer/Footer';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
+import ListaTema from './componentes/temas/listaTema/ListaTema';
+import ListaPostagem from './componentes/postagens/listaPostagem/ListaPostagem';
+import CadastroPost from './componentes/postagens/cadastroPostagem/CadastroPost';
+import CadastroTema from './componentes/temas/cadastroTema/CadastroTema';
+ 
 import './App.css';
+
 
 function App() {
   return (
@@ -35,6 +41,32 @@ function App() {
           <Route path='/cadastrousuario'>
               <CadastroUsuario />
             </Route>
+
+            <Route path="/temas">
+            <ListaTema />
+          </Route>
+
+          <Route path="/posts">
+            <ListaPostagem />
+          </Route>
+
+          <Route exact path='/formularioPostagem'>
+            <CadastroPost />
+          </Route>
+
+          <Route exact path='/formularioPostagem/:id'>
+            <CadastroPost />
+          </Route>
+
+          <Route exact path='/formularioTema'>
+            <CadastroTema />
+          </Route>
+
+          <Route exact path='/formularioTema/:id'>
+            <CadastroTema />
+          </Route>
+
+         
 
         </div>
 
