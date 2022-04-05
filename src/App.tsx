@@ -13,6 +13,8 @@ import CadastroPostagem from './componentes/postagens/cadastroPostagem/CadastroP
 import CadastroTema from './componentes/temas/cadastroTema/CadastroTema';
  
 import './App.css';
+import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
+import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
 
 
 function App() {
@@ -71,7 +73,7 @@ function App() {
           </Route>
 
           <Route exact path='/temas/:id'>
-            <DeletarTemas />
+            <DeletarTema />
           </Route>
 
         </div>
