@@ -2,7 +2,7 @@ import react, { useEffect } from 'react';
 import { Paper, Box, Button, Grid, Typography } from '@material-ui/core';
 import './Home.css';
 import ModalPostagem from '../../componentes/postagens/modalPostagem/ModalPostagem';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
 import TabPostagem from '../../componentes/postagens/tabPostagem/TabPostagem';
 
@@ -27,12 +27,18 @@ function Home() {
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
                         <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" style={{ color: "white", fontWeight: "bold" }}>expresse aqui os seus pensamentos e opiniões!</Typography>
                     </Box>
-                    <Box display="flex" justifyContent="center">
-                        <Box marginRight={1}>
-                            <ModalPostagem />
+                    
+                    <Link to='/postagens'>
+                        <Box display="flex" justifyContent="center">
+                       
+                            <Box marginRight={1}>
+                                <ModalPostagem />
+                            </Box>
+                            <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3f51b5", color: "white" }}>
+                                        Ver Postagens
+                            </Button>
                         </Box>
-                        <Button variant="outlined" style={{ borderColor: "white", backgroundColor: "#3f51b5", color: "white" }}>Ver Postagens</Button>
-                    </Box>
+                    </Link>
                 </Grid>
                 <Grid item xs={6}>
                     <img src="https://i.imgur.com/KDZ0exd.png" alt="" width="500px" height="400px" />
