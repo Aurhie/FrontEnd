@@ -7,6 +7,7 @@ import Postagem from "../../../models/Postagem";
 import './ListaPostagem.css'
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/UserReducer";
+import { toast } from "react-toastify";
 
 
 function ListaPostagem() {
@@ -21,7 +22,16 @@ function ListaPostagem() {
 
     useEffect(() => {
         if (token == '') {
-            alert('Você precisa estar logado')
+            toast.error('Você precisa estar logado',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
             history.push('/login')
         }
     }, [token])
@@ -91,4 +101,4 @@ function ListaPostagem() {
 
 }
 
-export default ListaPostagem
+export default ListaPostagem;

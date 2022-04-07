@@ -1,6 +1,7 @@
 import { Box, Grid, TextField, Typography, Button } from "@material-ui/core";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
+import { toast } from "react-toastify";
 import User from "../../models/User";
 import { cadastroUsuario } from "../../service/Service";
 import './CadastroUsuario.css'
@@ -62,17 +63,44 @@ function CadastroUsuario() {
         //Tenta executar o cadastro
         try {
             await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            alert("Usuário cadastrado com sucesso")
+            toast.success('Usúario cadastrado com sucesso!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
 
         //Se houver erro, pegue o Erro e retorna uma mensagem (alert)
         } catch (error) {
             
             //Pode modificar a mensagem de acordo com o erro 
-            alert("Usuário já existente")
+            toast.error('Usúario já cadastrado, por favor insira dados válidos.',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
         }
 
     } else {
-        alert("Dados inconsistentes")
+        toast.error('Dados inconsistentes',{
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'dark',
+            progress: undefined
+        })
 
         setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
         setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha
