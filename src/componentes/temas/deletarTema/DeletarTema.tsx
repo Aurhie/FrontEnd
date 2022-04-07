@@ -53,7 +53,7 @@ function DeletarTema() {
 
     async function sim() {
        history.push('/temas')
-       deleteId('/temas/${id}',{
+       deleteId(`/temas/${id}`,{
             headers: {
                 'Authorization': token
             }
