@@ -1,14 +1,18 @@
 import React, { useState, useEffect, ChangeEvent } from 'react';
-import {Grid,Box, Typography, TextField, Button} from '@material-ui/core';
+import {Grid, Box, Typography, TextField, Button} from '@material-ui/core';
 import {Link, useHistory} from 'react-router-dom'; 
-import useLocalStorage from 'react-use-localstorage';
 import {login} from '../../service/Service';
 import UserLogin from '../../models/UserLogin';
 import './Login.css';
 
+import { useDispatch } from 'react-redux';
+import { addToken } from "../../store/tokens/actions";
+import { toast } from 'react-toastify';
+
 function Login() {
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('');
     const [userLogin, setUserLogin] = useState<UserLogin>(
         {
             id: 0,
@@ -31,6 +35,7 @@ function Login() {
 
             useEffect(() =>{
                 if(token != ''){
+                    dispatch(addToken(token));
                     history.push('/home')
                 }
             }, [token])
@@ -40,9 +45,28 @@ function Login() {
             try{
                 await login('/usuarios/logar', userLogin, setToken)
 
-                alert('Usuário logado com sucesso!');
+                toast.success('Usuário logado com sucesso!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
+
             }catch(error){
-                alert('Dados do usuário inconsistentes. Erro ao logar!');
+                toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                    });
             }
         }
 
