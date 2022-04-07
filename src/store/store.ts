@@ -1,5 +1,5 @@
-import {createStore} from 'redux';
-import { userReducer} from './tokens/userReducer';
+import { createStore } from 'redux';
+import { userReducer} from './tokens/UserReducer';
 
 
 const store = createStore(userReducer);
