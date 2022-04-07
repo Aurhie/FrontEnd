@@ -3,13 +3,16 @@ import { Paper, Box, Button, Grid, Typography } from '@material-ui/core';
 import './Home.css';
 import ModalPostagem from '../../componentes/postagens/modalPostagem/ModalPostagem';
 import { Link, useHistory } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import TabPostagem from '../../componentes/postagens/tabPostagem/TabPostagem';
+import { useSelector } from 'react-redux';
+import { UserState } from '../../store/tokens/UserReducer';
 
 function Home() {
 
     let history = useHistory();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector < UserState, UserState["tokens"]> (
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token === "") {

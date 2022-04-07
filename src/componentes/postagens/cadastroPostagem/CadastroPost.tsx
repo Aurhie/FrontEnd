@@ -1,10 +1,11 @@
 import { Button, Container, FormControl, FormHelperText, InputLabel, MenuItem, Select, TextField, Typography } from '@material-ui/core';
 import React, { ChangeEvent, useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import Postagem from '../../../models/Postagem';
 import Tema from '../../../models/Tema';
 import { busca, buscaId, post, put } from '../../../service/Service';
+import { UserState } from '../../../store/tokens/UserReducer';
 import './CadastroPost.css'
 
 function CadastroPost() {
@@ -12,7 +13,9 @@ function CadastroPost() {
     let history = useHistory();
     const { id } = useParams<{ id: string }>();
     const [temas, setTemas] = useState<Tema[]>([])
-    const [token, setToken] = useLocalStorage("token");
+    const token = useSelector < UserState, UserState["tokens"]> (
+        (state) => state.tokens
+    );
 
     useEffect(() => {
         if (token === "") {
