@@ -43,9 +43,7 @@ function Navbar() {
                 <Toolbar variant="dense">
                     <Box mx={1} className='cursor logo'>
                         
-                        {<Typography variant="h5" color="inherit">
-                            Colaboratech
-                        </Typography>}
+                       
                     </Box>
                     
                     <Box display='flex' justifyContent='start'>
