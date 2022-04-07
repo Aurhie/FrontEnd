@@ -7,6 +7,7 @@ import Tema from '../../../models/Tema';
 import { busca, buscaId, post, put } from '../../../service/Service';
 import { UserState } from '../../../store/tokens/UserReducer';
 import './CadastroPost.css'
+import { toast } from 'react-toastify';
 
 function CadastroPost() {
 
@@ -19,8 +20,17 @@ function CadastroPost() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
+            toast.error('Você precisa estar logado',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
+            history.push('/login')
         }
     }, [token])
 
@@ -86,10 +96,29 @@ function CadastroPost() {
                         "Authorization": token
                     }
                 })
-                alert("Postagem atualizada com sucesso")
+                toast.success('Postagem atualizada com sucesso!',{
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'dark',
+                    progress: undefined
+                })
             } catch (error) {
                 console.log(`Error: ${error}`)
-                alert("Erro ao atualizar, verifique os campos")
+                toast.error('Erro ao atualizar postagem, por favor verifique os campos.',{
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'dark',
+                    progress: undefined
+                })
+    
             }
         } else {
             try {
@@ -98,16 +127,33 @@ function CadastroPost() {
                         "Authorization": token
                     }
                 })
-                alert("Postagem cadastrada com sucesso");
+                toast.success('Postagem cadastrada com sucesso!',{
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'dark',
+                    progress: undefined
+                })
             } catch (error) {
                 console.log(`Error: ${error}`)
-                alert("Erro ao cadastrar, verifique os campos")
+                toast.error('Erro ao cadastrar postagem, por favor verifique os campos.',{
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'dark',
+                    progress: undefined
+                });
             }
         }
-
         back()
-
     }
+
 
     function back() {
         history.push("/postagens")
