@@ -52,7 +52,7 @@ function Login() {
                     closeOnClick: true,
                     pauseOnHover: false,
                     draggable: false,
-                    theme: "colored",
+                    theme: "dark",
                     progress: undefined,
                     });
 
@@ -64,7 +64,7 @@ function Login() {
                     closeOnClick: true,
                     pauseOnHover: false,
                     draggable: false,
-                    theme: "colored",
+                    theme: "dark",
                     progress: undefined,
                     });
             }

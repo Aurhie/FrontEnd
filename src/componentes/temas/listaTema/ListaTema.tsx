@@ -27,7 +27,7 @@ function ListaTema() {
                 closeOnClick: true,
                 pauseOnHover: false,
                 draggable: false,
-                theme: "colored",
+                theme: "dark",
                 progress: undefined,
                 });
             history.push('/login')

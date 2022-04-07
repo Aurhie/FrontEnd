@@ -22,16 +22,19 @@ function CadastroTema() {
     })
 
     useEffect(() => {
-        toast.success('Tema cadastrado com sucesso!',{
-            position: 'top-right',
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true, 
-            pauseOnHover: false,
-            draggable: false,
-            theme: 'dark',
-            progress: undefined
-        })
+        if (token === "") {
+            toast.error("Você precisa estar logado.", {
+                position: "top-right", 
+                autoClose: 2000, 
+                hideProgressBar: false, 
+                closeOnClick: true, 
+                pauseOnHover: false, 
+                draggable: false, 
+                theme: "dark", 
+                progress: undefined, 
+            });
+            history.push("/login")
+        }
     }, [token])
 
     useEffect(() => {

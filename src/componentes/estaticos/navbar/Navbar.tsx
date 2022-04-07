@@ -20,6 +20,7 @@ function Navbar() {
     let history = useHistory();
     const dispatch = useDispatch();
     
+    
     function goLogout(){
         dispatch(addToken(''));
         toast.info('Usuário deslogado', {
@@ -29,7 +30,7 @@ function Navbar() {
             closeOnClick: true,
             pauseOnHover: false,
             draggable: false,
-            theme: "colored",
+            theme: "dark",
             progress: undefined,
         });
         history.push('/login')
@@ -90,7 +91,7 @@ function Navbar() {
                         </Link>
 
                         <Link to='/login' className='text-decorator-none'>
-                            <Box mx={1} style={{ cursor: "pointer", color: 'white' }} >
+                            <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
                                 <Typography variant="h5" color="inherit">
                                     Logout
                                 </Typography>
