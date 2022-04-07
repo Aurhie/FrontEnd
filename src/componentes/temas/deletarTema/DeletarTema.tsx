@@ -8,6 +8,8 @@ import { buscaId, deleteId } from '../../../service/Service';
 
 import "./DeletarTema.css"
 
+import { toast } from 'react-toastify';
+
 function DeletarTema() {
 
     let history = useHistory();
@@ -20,9 +22,17 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
-
+           toast.error("Você precisa estar logado!", {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'dark',
+            progress: undefined
+           });
+           history.push("/login")
         }
     }, [token])
 
@@ -41,21 +51,22 @@ function DeletarTema() {
     }
 
     async function sim() {
-        history.push('/temas')
-
-        try {
-            await deleteId(`/temas/${id}`, {
-                headers: {
-                    'Authorization': token
-                }
-            });
-            
-            alert('Tema deletado com sucesso');
-            
-        } catch (error) {
-            alert('Erro ao deletar');
-        }
-
+       history.push('/temas')
+       deleteId('/temas/${id}',{
+            headers: {
+                'Authorization': token
+            }
+       });
+        toast.success('Tema deletado com sucesso!', {
+            position: 'top-right',
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: 'dark',
+            progress: undefined
+       })
     }
 
     function nao() {
