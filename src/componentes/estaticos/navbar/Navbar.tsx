@@ -1,19 +1,52 @@
 import react from 'react';
 import { AppBar, Toolbar, Typography, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+
+import {useHistory } from 'react-router-dom'
+
 import './Navbar.css';
 
+import { useSelector } from 'react-redux';
+import { UserState } from '../../../store/tokens/UserReducer';
+import { useDispatch } from "react-redux";
+import { addToken } from '../../../store/tokens/actions';
+import {toast} from 'react-toastify';
+
 function Navbar() {
-    return (
-        <>
-            <AppBar position="static">
+
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+      );
+    let history = useHistory();
+    const dispatch = useDispatch();
+    
+    function goLogout(){
+        dispatch(addToken(''));
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
+        history.push('/login')
+    }
+
+    var navbarComponent;
+
+    if(token != ""){
+        navbarComponent = <AppBar position="static">
                 <Toolbar variant="dense">
                     <Box mx={1} className='cursor logo'>
                         
-                        {/* <Typography variant="h5" color="inherit">
+                        {<Typography variant="h5" color="inherit">
                             Colaboratech
-                        </Typography> */}
+                        </Typography>}
                     </Box>
+                    
                     <Box display='flex' justifyContent='start'>
                         <Link to='/home' className='text-decorator-none'>
                             <Box mx={1} className='cursor'>
@@ -62,11 +95,17 @@ function Navbar() {
                                     Logout
                                 </Typography>
                             </Box>
-
                         </Link>
+                        
                     </Box>
+
                 </Toolbar>
             </AppBar >
+    }
+
+    return (
+        <>
+            {navbarComponent}
         </>
     )
 }
