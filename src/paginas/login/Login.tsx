@@ -2,10 +2,7 @@ import React, { ChangeEvent, useState, useEffect } from 'react'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-<<<<<<< HEAD
-=======
 
->>>>>>> parent of 7cadd2e (Adicionado toastify-login)
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../service/Service'
 import { addId, addToken } from '../../store/tokens/actions'
@@ -14,29 +11,48 @@ import './Login.css';
 import { toast } from 'react-toastify';
 
 function Login() {
-    let history = useHistory();
-    const dispatch = useDispatch();
-    const [token, setToken] = useState('');
-    const [userLogin, setUserLogin] = useState<UserLogin>(
-        {
-            id: 0,
-            nome: '',
-            usuario: '',
-            foto: '',
-            senha: '',
-            tipo: '',
-            token: ''
+
+    let history = useHistory()
+
+    const dispatch = useDispatch()
+
+    const [token, setToken] = useState('')
+
+    const [userLogin, setUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        foto: '',
+        senha: '',
+        token: '',
+        tipo: ''
+    })
+
+    // Crie mais um State para pegar os dados retornados a API
+    const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+        id: 0,
+        nome: '',
+        usuario: '',
+        foto: '',
+        senha: '',
+        token: '',
+        tipo: ''
+    })
+
+    useEffect(() => {
+        if (token !== "") {
+            dispatch(addToken(token))
+            history.push('/home')
         }
-        )
+    }, [token])
 
-        function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+    function updatedModel(e: ChangeEvent<HTMLInputElement>) {
+        setUserLogin({
+            ...userLogin,
+            [e.target.name]: e.target.value
+        })
+    }
 
-<<<<<<< HEAD
-            setUserLogin({
-                ...userLogin,
-                [e.target.name]: e.target.value
-            })
-=======
     useEffect(() => {
         if (respUserLogin.token !== "") {
 
@@ -60,49 +76,31 @@ function Login() {
             setToken por setRespUserLogin */
 
             await login(`/usuarios/logar`, userLogin, setRespUserLogin)
-            alert("Usuário logado com sucesso")
+
+            toast.success('Usúario logado com sucesso!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
 
         } catch (error) {
-            alert("Dados do usuário inconsistentes")
->>>>>>> parent of 7cadd2e (Adicionado toastify-login)
-        }
-
-            useEffect(() =>{
-                if(token != ''){
-                    dispatch(addToken(token));
-                    history.push('/home')
-                }
-            }, [token])
-
-        async function onSubmit(e: ChangeEvent<HTMLFormElement>){
-            e.preventDefault();
-            try{
-                await login('/usuarios/logar', userLogin, setToken)
-
-                toast.success('Usuário logado com sucesso!', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    theme: "dark",
-                    progress: undefined,
-                    });
-
-            }catch(error){
-                toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
-                    position: "top-right",
-                    autoClose: 2000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: false,
-                    draggable: false,
-                    theme: "dark",
-                    progress: undefined,
-                    });
-            }
-        }
+            toast.success('Os dados do usuário estão inconsistentes!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
+    }
+}
 
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
@@ -128,7 +126,7 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                        <Link to='/cadastrousuario'>
+                        <Link to='/cadastroUsuario'>
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
                     </Box>
