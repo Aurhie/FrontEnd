@@ -2,7 +2,7 @@ import React, { ChangeEvent, useState, useEffect } from 'react'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-
+import { toast } from 'react-toastify';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../service/Service'
 import { addId, addToken } from '../../store/tokens/actions'
@@ -75,10 +75,29 @@ function Login() {
             setToken por setRespUserLogin */
 
             await login(`/usuarios/logar`, userLogin, setRespUserLogin)
-            alert("Usuário logado com sucesso")
+            toast.success('Usuário logado com sucesso!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
+
 
         } catch (error) {
-            alert("Dados do usuário inconsistentes")
+            toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
         }
     }
 
