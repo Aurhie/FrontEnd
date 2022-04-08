@@ -4,17 +4,50 @@ cursor:pointer;
 color:#ffffff;
 }
 
+.navCor
+{
+    background-color: #03051b;
+}
+
 .text-decorator-none
 {
     text-decoration: none;
 }
 .logo
-{   background-image:url(https://raw.githubusercontent.com/ColaboraTechPI/Docs/main/Logo/Transparente/Versão%20negativa%20-%20horizontal%20%5BSF%5D.png);
-    min-height: 10vh;
-    width: 35vh;
+{   background-image:url(https://github.com/ColaboraTechPI/FrontEnd/blob/task12/src/Assets/Img/Logo.png?raw=true);
+    min-height: 7vh;
+    width: 7vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;    
     /* font-size: 60px !important; */
     color: #ffffff;
+}
+
+/* barra de pesquisa */
+.container {
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+#searchBar {
+    width: 30vw;
+    height: 32px;
+    border-radius: 20px;
+    border: 1px solid #0c0e27;
+    padding: 5px 10px;
+    font-size: 12px;
+    background-color: #1c1e3d;
+}
+
+#searchWrapper {
+    position: relative;
+}
+
+#searchWrapper::after {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 5px;
 }
