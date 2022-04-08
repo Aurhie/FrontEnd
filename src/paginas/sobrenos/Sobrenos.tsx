@@ -2,6 +2,7 @@ import { Box, Grid, Typography } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import { Link } from 'react-router-dom';
+import CarouselComponent from '../../componentes/carousel/CarouselComponent';
 import './Sobrenos.css';
 
 
@@ -9,7 +10,7 @@ import './Sobrenos.css';
 function Sobrenos() {
     return (
         <Grid container>
-            <Grid item container xs={6} direction='column'>
+            <Grid item container xs={12} direction='column' className='grid1'>
                     <Typography variant="h1" className="tituloSobreNos">ColaboraTech</Typography>
 
                 <Typography className="textoSobreNos">
@@ -20,8 +21,9 @@ function Sobrenos() {
                     Suspendisse scelerisque luctus enim, sed vehicula magna tristique sed. Pellentesque suscipit pretium ante sit amet pretium. Phasellus interdum justo in faucibus varius. Nunc nec odio tellus. Etiam vitae vestibulum ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc mauris ex, vehicula non orci sit amet, tempor congue turpis. Curabitur dictum quis libero eu facilisis. Sed quis ipsum ante. Aenean quis diam ut sem ultricies dictum. Aliquam vitae sem ut velit pulvinar vehicula.
                 </Typography>
             </Grid>
-            <Grid item container xs={6}>
-                <Grid item container direction='row' justifyContent='center' alignItems="center">
+            <Grid item container xs={12} className='grid2'>
+            <CarouselComponent />
+                {/* <Grid item container direction='row' justifyContent='center' alignItems="center">
                     <Grid item xs={4} alignItems="center">
                         <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" className="integrante">
                             <img src="https://avatars.githubusercontent.com/u/97414841?v=4" alt="Foto de perfil de Aurora Marques" className="icon" />
@@ -124,7 +126,7 @@ function Sobrenos() {
                             </Box>
                         </Box>
                     </Grid>
-                </Grid>
+                </Grid> */}
             </Grid>
         </Grid>
     );

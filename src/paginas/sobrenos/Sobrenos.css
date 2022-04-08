@@ -1,42 +1,9 @@
-.icon{
-    font-size: 150px !important;
-    width: 150px;
-    /* border-radius: 120% !important; */
-    padding: 20px 0 0px 0;
-    border-top-left-radius: 170px;
-    border-top-right-radius: 170px;
-    border-bottom-left-radius: 130px;
-    border-bottom-right-radius: 130px;
+.grid1
+{
+    height: 50vh;
 }
 
-.integrante{
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    border: 2px ;
-    background-color: gray;
-    border-radius: 7px;
-}
-
-.nomes{
-    margin: 10px !important;
-    font-size: 18px !important;
-    text-align: center;
-}
-
-.redes{
-    margin: 0 10px 20px 10px;
-    /* font-size: 10px !important; */
-    width: 5px;
-}
-
-.tituloSobreNos{
-    padding: 20px 60px 0 60px;
-    font-size: 60px !important;
-    font-weight: bold !important;
-}
-
-.textoSobreNos{
-    text-align: justify;
-    padding: 20px 60px;
+.grid2
+{
+    height: 50vh;
 }
