@@ -12,10 +12,8 @@ import CadastroPostagem from './componentes/postagens/cadastroPostagem/CadastroP
 import CadastroTema from './componentes/temas/cadastroTema/CadastroTema';
 import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
-
 import Sobrenos from './paginas/sobrenos/Sobrenos'
 import logo from './logo.svg';
-
 import {Provider} from 'react-redux';
 import store from './store/store';
 import {ToastContainer} from 'react-toastify';

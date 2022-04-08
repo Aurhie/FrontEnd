@@ -1,15 +1,17 @@
-import React from 'react';
 import { Box, Grid, Typography } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import { Link } from 'react-router-dom';
 import './Sobrenos.css';
 
+
+
 function Sobrenos() {
     return (
         <Grid container>
             <Grid item container xs={6} direction='column'>
-                <Typography variant="h1" className="tituloSobreNos">ColaboraTech</Typography>
+                    <Typography variant="h1" className="tituloSobreNos">ColaboraTech</Typography>
+
                 <Typography className="textoSobreNos">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum metus pharetra, mattis ipsum nec, accumsan erat. Ut eros arcu, porta sed tempus sagittis, pulvinar in nulla. Praesent tristique urna efficitur libero blandit, finibus tincidunt tellus ultrices. Donec efficitur mollis ante sollicitudin consectetur. Sed bibendum nibh lorem, ut sagittis magna posuere quis. Duis vulputate sodales pellentesque. Integer sagittis eros libero, sit amet pretium erat sollicitudin quis. Phasellus sit amet molestie sem, nec volutpat eros. Praesent lorem tellus, tincidunt a dapibus eu, consectetur vitae erat. Sed vel pharetra nunc. Maecenas id ligula a ligula facilisis interdum nec eget neque. Nullam ultricies tristique elit, id laoreet velit. Curabitur imperdiet velit nisl, a ornare nisi aliquet et. Aenean eu tellus vitae nibh scelerisque hendrerit pretium quis sem. Fusce ac diam et risus maximus rhoncus in at risus. Nullam eget nisl eu tellus ornare tempus.
                     Pellentesque lobortis libero sem, eu sagittis ipsum euismod sed. Vestibulum sollicitudin ac nunc eu commodo. Nulla ultricies feugiat luctus. Proin vel ex nisl. Fusce nec risus eget ex placerat tempus nec sed dui. Etiam ac justo eu nisi blandit luctus. Duis ultrices nunc sed leo semper porttitor. Morbi quis metus non urna laoreet viverra.

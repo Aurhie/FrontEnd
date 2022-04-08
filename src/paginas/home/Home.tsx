@@ -3,13 +3,12 @@ import { Paper, Box, Button, Grid, Typography } from '@material-ui/core';
 import ListaPostagem from '../../componentes/postagens/listaPostagem/ListaPostagem';
 import ModalPostagem from '../../componentes/postagens/modalPostagem/ModalPostagem';
 import './Home.css';
-
 import { useHistory } from 'react-router';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../store/tokens/UserReducer';
-
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Profile from '../../componentes/estaticos/profile/Profile';
 
 
 function Home() {
@@ -63,7 +62,11 @@ function Home() {
                     <img src="https://i.imgur.com/KDZ0exd.png" alt="" width="500px" height="400px" />
 
                 </Grid> */}
-                <Grid xs={12} style={{ backgroundColor: "white" }}>
+                <Grid xs={4}>
+                    <Profile/>
+                </Grid>
+
+                <Grid xs={8} style={{ backgroundColor: "white" }}>
                     <ListaPostagem />
                 </Grid>
             </Grid>
