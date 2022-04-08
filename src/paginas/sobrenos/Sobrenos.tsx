@@ -2,7 +2,6 @@ import { Box, Grid, Typography } from '@material-ui/core';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedIn from '@material-ui/icons/LinkedIn';
 import { Link } from 'react-router-dom';
-import CarouselComponent from '../../componentes/carousel/CarouselComponent';
 import './Sobrenos.css';
 
 
@@ -10,20 +9,18 @@ import './Sobrenos.css';
 function Sobrenos() {
     return (
         <Grid container>
-            <Grid item container xs={12} direction='column' className='grid1'>
-                    <Typography variant="h1" className="tituloSobreNos">ColaboraTech</Typography>
+            <Grid item container xs={6} direction='column'>
+                <Typography variant="h1" className="tituloSobreNos"></Typography>
 
                 <Typography className="textoSobreNos">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin bibendum metus pharetra, mattis ipsum nec, accumsan erat. Ut eros arcu, porta sed tempus sagittis, pulvinar in nulla. Praesent tristique urna efficitur libero blandit, finibus tincidunt tellus ultrices. Donec efficitur mollis ante sollicitudin consectetur. Sed bibendum nibh lorem, ut sagittis magna posuere quis. Duis vulputate sodales pellentesque. Integer sagittis eros libero, sit amet pretium erat sollicitudin quis. Phasellus sit amet molestie sem, nec volutpat eros. Praesent lorem tellus, tincidunt a dapibus eu, consectetur vitae erat. Sed vel pharetra nunc. Maecenas id ligula a ligula facilisis interdum nec eget neque. Nullam ultricies tristique elit, id laoreet velit. Curabitur imperdiet velit nisl, a ornare nisi aliquet et. Aenean eu tellus vitae nibh scelerisque hendrerit pretium quis sem. Fusce ac diam et risus maximus rhoncus in at risus. Nullam eget nisl eu tellus ornare tempus.
-                    Pellentesque lobortis libero sem, eu sagittis ipsum euismod sed. Vestibulum sollicitudin ac nunc eu commodo. Nulla ultricies feugiat luctus. Proin vel ex nisl. Fusce nec risus eget ex placerat tempus nec sed dui. Etiam ac justo eu nisi blandit luctus. Duis ultrices nunc sed leo semper porttitor. Morbi quis metus non urna laoreet viverra.
-                    Sed malesuada, enim et pellentesque vestibulum, ipsum lectus imperdiet sapien, vel imperdiet nisl augue id metus. Ut eget massa eget nulla posuere pulvinar non dignissim lacus. Fusce mi ligula, vulputate ut accumsan sit amet, sagittis vitae mi. Phasellus non euismod magna. Vestibulum in massa et turpis semper pretium ut sed neque. Maecenas mattis efficitur nulla, a egestas sem feugiat nec. Vestibulum in bibendum urna. Nunc sed dictum purus. Nam bibendum urna ut massa molestie pharetra. Aenean ligula mauris, faucibus pharetra ante eu, elementum laoreet lectus. Nulla et magna ipsum. Integer sed massa quam. Vivamus lacinia blandit pulvinar. Suspendisse non mi urna.
-                    Donec scelerisque, ex vel lobortis suscipit, lectus lectus semper leo, vitae condimentum nibh nunc id mauris. Donec sed ultrices erat. Aenean vitae tellus turpis. Sed et hendrerit tortor. Proin a posuere sapien. Phasellus lobortis nisl vitae dolor mattis, cursus feugiat tortor blandit. Donec et nulla laoreet, condimentum arcu ut, consectetur tellus. Maecenas posuere at mi sit amet dictum.
-                    Suspendisse scelerisque luctus enim, sed vehicula magna tristique sed. Pellentesque suscipit pretium ante sit amet pretium. Phasellus interdum justo in faucibus varius. Nunc nec odio tellus. Etiam vitae vestibulum ligula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nunc mauris ex, vehicula non orci sit amet, tempor congue turpis. Curabitur dictum quis libero eu facilisis. Sed quis ipsum ante. Aenean quis diam ut sem ultricies dictum. Aliquam vitae sem ut velit pulvinar vehicula.
+                    O Naruto pode ser um pouco duro as vezes, talvez você não saiba disso, mas o Naruto também cresceu sem pai.
+                     Na verdade ele nunca conheceu nenhum de seus pais, e nunca teve nenhum amigo em nossa aldeia.
+                      Mesmo assim eu nunca vi ele chorar, ficar zangado ou se dar por vencido, ele está sempre disposto a melhorar, ele quer ser respeitado, é o sonho dele e o Naruto daria a vida por isso sem hesitar.
+                       Meu palpite é que ele se cansou de chorar e decidiu fazer alguma coisa a respeito!
                 </Typography>
             </Grid>
-            <Grid item container xs={12} className='grid2'>
-            <CarouselComponent />
-                {/* <Grid item container direction='row' justifyContent='center' alignItems="center">
+            <Grid item container xs={6}>
+                <Grid item container direction='row' justifyContent='center' alignItems="center">
                     <Grid item xs={4} alignItems="center">
                         <Box display="flex" alignItems="center" justifyContent="center" flexDirection="column" className="integrante">
                             <img src="https://avatars.githubusercontent.com/u/97414841?v=4" alt="Foto de perfil de Aurora Marques" className="icon" />
@@ -126,7 +123,7 @@ function Sobrenos() {
                             </Box>
                         </Box>
                     </Grid>
-                </Grid> */}
+                </Grid>
             </Grid>
         </Grid>
     );

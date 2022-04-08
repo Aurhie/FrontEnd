@@ -81,13 +81,13 @@ function Navbar() {
                     </Link>
 
 
-                    {/* <Link to='/login' className='text-decorator-none'>
+                     <Link to='/login' className='text-decorator-none'>
                             <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
                                 <Typography variant="h5" color="inherit">
                                     Logout
                                 </Typography>
                             </Box>
-                        </Link> */}
+                        </Link>
 
                 </Box>
                     {/* Barra de pesquisa */}
