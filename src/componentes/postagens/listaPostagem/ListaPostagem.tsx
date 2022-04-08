@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import Typography from '@mui/material/Typography'
-import { Box, Card, CardActions, Button, CardContent } from "@material-ui/core";
+import { Box, Card, CardActions, Button, CardContent, FormControlLabel, Checkbox } from "@material-ui/core";
 import { busca } from "../../../service/Service";
 import Postagem from "../../../models/Postagem";
 import './ListaPostagem.css'
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/UserReducer";
 import { toast } from "react-toastify";
+import { Favorite, FavoriteBorder } from "@material-ui/icons";
 
 
 function ListaPostagem() {
     const [postagens, setPostagens] = useState<Postagem[]>([])
 
-    const token = useSelector < UserState, UserState["tokens"]> (
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 
@@ -22,7 +23,7 @@ function ListaPostagem() {
 
     useEffect(() => {
         if (token == '') {
-            toast.error('Você precisa estar logado',{
+            toast.error('Você precisa estar logado', {
                 position: 'top-right',
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -51,15 +52,14 @@ function ListaPostagem() {
 
     return (
         <>
+            <Typography gutterBottom>
+                Postagens
+            </Typography>
             {
                 postagens.map(postagem => (
                     <Box m={2}>
-                        <Card variant='outlined'>
+                        <Card variant='outlined' className="caixa-post">
                             <CardContent>
-                                <Typography gutterBottom>
-                                    Postagens
-                                </Typography>
-
                                 <Typography variant='h5' component='h2'>
                                     {postagem.titulo}
                                 </Typography>
@@ -67,30 +67,41 @@ function ListaPostagem() {
                                 <Typography variant='body2' component='p'>
                                     {postagem.texto}
                                 </Typography>
-
-                                <Typography variant='body2' component='p'>
-                                    {postagem.tema?.nome}
-                                </Typography>
                             </CardContent>
 
-                            <CardActions>
-                                <Box display='flex' justifyContent='center' mb={1.5}>
-                                    <Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
-                                        <Box mx={1}>
-                                            <Button className='btn-atualizar'>
-                                                Atualizar
-                                            </Button>
-                                        </Box>
-                                    </Link>
+                            <CardActions className="chari">
+                                <Box display='flex' justifyContent='center' alignItems="center" mb={1.5}>
 
-                                    <Link to={`/DeletarPostagem/${postagem.id}`} className='text-decorator-none'>
-                                        <Box mx={1}>
-                                            <Button className='btn-deletar'>
-                                                Deletar
-                                            </Button>
-                                        </Box>
-                                    </Link>
+                                    <Box display='flex' justifyContent='center' alignItems="center">
+                                        <FormControlLabel
+                                            control={<Checkbox icon={<FavoriteBorder />}
+                                                checkedIcon={<Favorite />}
+                                                name="checkedH" />}
+                                            label="Curtir"
+                                        />
+
+                                        <Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
+                                            <Box mx={1}>
+                                                <Button className='btn-atualizar'>
+                                                    Atualizar
+                                                </Button>
+                                            </Box>
+                                        </Link>
+
+                                        <Link to={`/DeletarPostagem/${postagem.id}`} className='text-decorator-none'>
+                                            <Box mx={1}>
+                                                <Button className='btn-deletar'>
+                                                    Deletar
+                                                </Button>
+                                            </Box>
+                                        </Link>
+                                    </Box>                                    
                                 </Box>
+                                <Box mx={1} >
+                                        <Typography variant='body2' component='p' className="tema-postagens">
+                                            {postagem.tema?.nome}
+                                        </Typography>
+                                 </Box>
                             </CardActions>
                         </Card>
                     </Box>
