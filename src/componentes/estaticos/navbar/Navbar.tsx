@@ -70,7 +70,25 @@ function Navbar() {
                             </Typography>
 
                         </Box>
-                    </Link>                    
+                    </Link>    
+
+                    <Link to='/formularioPostagem' className='text-decorator-none'>
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h5" color="inherit">
+                                Cadastrar Postagem
+                            </Typography>
+
+                        </Box>
+                    </Link>  
+
+                    <Link to='/formularioTema' className='text-decorator-none'>
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h5" color="inherit">
+                                Cadastrar Tema
+                            </Typography>
+
+                        </Box>
+                    </Link>                   
 
                     <Link to='/sobre-nos' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
