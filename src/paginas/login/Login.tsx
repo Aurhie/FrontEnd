@@ -8,6 +8,7 @@ import { login } from '../../service/Service'
 import { addId, addToken } from '../../store/tokens/actions'
 
 import './Login.css';
+import { toast } from 'react-toastify';
 
 function Login() {
 
@@ -75,12 +76,34 @@ function Login() {
             setToken por setRespUserLogin */
 
             await login(`/usuarios/logar`, userLogin, setRespUserLogin)
-            alert("Usuário logado com sucesso")
 
-        } catch (error) {
-            alert("Dados do usuário inconsistentes")
-        }
+            toast.success('Usúario logado com sucesso!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
+
+        } 
+    
+        
+        catch (error) {
+            toast.success('Os dados do usuário estão inconsistentes!',{
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            })
     }
+}
 
     return (
         <Grid container direction='row' justifyContent='center' alignItems='center'>
@@ -106,7 +129,7 @@ function Login() {
                         <Box marginRight={1}>
                             <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
                         </Box>
-                        <Link to='/cadastro'>
+                        <Link to='/cadastrousuario'>
                             <Typography variant='subtitle1' gutterBottom align='center' className='textos1'>Cadastre-se</Typography>
                         </Link>
                     </Box>
