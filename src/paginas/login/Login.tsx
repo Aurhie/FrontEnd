@@ -2,6 +2,10 @@ import React, { ChangeEvent, useState, useEffect } from 'react'
 import { Box, Button, Grid, TextField, Typography } from '@material-ui/core'
 import { Link, useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of 7cadd2e (Adicionado toastify-login)
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../service/Service'
 import { addId, addToken } from '../../store/tokens/actions'
@@ -27,10 +31,40 @@ function Login() {
 
         function updatedModel(e: ChangeEvent<HTMLInputElement>) {
 
+<<<<<<< HEAD
             setUserLogin({
                 ...userLogin,
                 [e.target.name]: e.target.value
             })
+=======
+    useEffect(() => {
+        if (respUserLogin.token !== "") {
+
+            // Verifica os dados pelo console (Opcional)
+            console.log("Token: " + respUserLogin.token)
+            console.log("ID: " + respUserLogin.id)
+
+            // Guarda as informações dentro do Redux (Store)
+            dispatch(addToken(respUserLogin.token))
+            dispatch(addId(respUserLogin.id.toString()))    // Faz uma conversão de Number para String
+            history.push('/home')
+        }
+    }, [respUserLogin.token])
+
+    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+        e.preventDefault()
+
+        try {
+
+            /* Se atente para a Rota de Logar, e também substitua o método
+            setToken por setRespUserLogin */
+
+            await login(`/usuarios/logar`, userLogin, setRespUserLogin)
+            alert("Usuário logado com sucesso")
+
+        } catch (error) {
+            alert("Dados do usuário inconsistentes")
+>>>>>>> parent of 7cadd2e (Adicionado toastify-login)
         }
 
             useEffect(() =>{
