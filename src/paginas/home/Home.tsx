@@ -37,7 +37,7 @@ function Home() {
 
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center" style={{ backgroundColor: "#3f51b5" }}>
+            <Grid container direction="row" justifyContent="center">
                 {/* <Grid alignItems="center" item xs={6}>
                     <Box paddingX={20} >
                         <Typography variant="h3" gutterBottom color="textPrimary" component="h3" align="center" style={{ color: "white", fontWeight: "bold" }}>Seja bem vindo(a)!</Typography>
@@ -62,11 +62,11 @@ function Home() {
                     <img src="https://i.imgur.com/KDZ0exd.png" alt="" width="500px" height="400px" />
 
                 </Grid> */}
-                <Grid xs={4}>
+                <Grid xs={3}>
                     <Profile/>
                 </Grid>
 
-                <Grid xs={8} style={{ backgroundColor: "white" }}>
+                <Grid xs={9} style={{ backgroundColor: "white" }}>
                     <ListaPostagem />
                 </Grid>
             </Grid>

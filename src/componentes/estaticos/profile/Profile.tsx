@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box } from '@material-ui/core'
+import { Box, Typography } from '@material-ui/core'
 import { useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { UserState } from '../../../store/tokens/UserReducer'
@@ -8,6 +8,7 @@ import User from '../../../models/User'
 import { buscaId } from '../../../service/Service'
 
 import './Profile.css'
+import { toast } from 'react-toastify'
 
 function Profile() {
 
@@ -32,12 +33,22 @@ function Profile() {
         tipo: ''
     })
 
-    useEffect(() => {
-        if (token === "") {
-            alert("Você precisa estar logado")
-            history.push("/login")
-        }
-    }, [token])
+    // useEffect(() => {
+    //     if (token === "") {
+    //         toast.error('Você precisa estar logado', {
+    //             position: "top-right",
+    //             autoClose: 2000,
+    //             hideProgressBar: false,
+    //             closeOnClick: true,
+    //             pauseOnHover: false,
+    //             draggable: false,
+    //             theme: "dark",
+    //             progress: undefined,
+    //         });
+    //         history.push("/login")
+    //         history.push("/login")
+    //     }
+    // }, [token])
 
     // Métedo para pegar os dados de um Usuário especifico pelo ID
     async function findById(id: string) {
@@ -55,26 +66,39 @@ function Profile() {
     }, [id])
 
     return (
-        <Box className='card-principal'>
-            <Box className='card-container-imagem'>
-                <img className='card-imagem'
-                    src={ user.foto }
-                    alt={ user.nome } />
-            </Box>
-
-            <Box className='card-container-info'>
-                <Box>
-                    <h1>{ user.nome }</h1>
-                    <hr />
+        <Box>
+            <Box className='card-principal'>
+                <Box className='card-container-imagem'>
+                    <img className='card-imagem'
+                        src={user.foto}
+                        alt={user.nome} />
                 </Box>
 
-                <p className='card-container-texto'>
-                   teste
-                </p>
+                <Box className='card-container-info'>
+                    <Box>
+                        <h1>{user.nome}</h1>
+                        <p className="textoProfile">Nome</p>
+                    </Box>
 
-                <p className='card-container-texto'>
-                    teste
-                </p>
+                    <Box>
+                        <h1>{user.usuario}</h1>
+                        <p className="textoProfile">E-mail</p>
+                    </Box>
+
+                    <Box>
+                        <h1>{user.tipo}</h1>
+                        <p className="textoProfile">Tipo de usuário</p>
+                    </Box>
+
+                    <Box className="boxLogout">
+                        <p className="logout">Logout</p>
+                    </Box>
+                </Box>
+
+
+            </Box>
+            <Box className="profilePostagem">
+                <Typography className="btnProfile">Nova Postagem</Typography>
             </Box>
         </Box>
     )
