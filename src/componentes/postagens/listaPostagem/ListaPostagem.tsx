@@ -7,8 +7,8 @@ import Postagem from "../../../models/Postagem";
 import './ListaPostagem.css'
 import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/UserReducer";
-import { toast } from "react-toastify";
 import { Favorite, FavoriteBorder } from "@material-ui/icons";
+import { toast } from "react-toastify";
 
 
 function ListaPostagem() {

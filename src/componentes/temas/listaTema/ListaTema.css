@@ -1,3 +1,11 @@
 .text-decorator-none{
     text-decoration: none!important;
 }
+.caixa-post2{
+    background-image: linear-gradient(to right,#a6c1ee,#fbc2eb) !important;
+    padding: 4vh !important;
+}
+
+.chari2{
+    display:flex; justify-content: space-between; align-items:center;
+}
