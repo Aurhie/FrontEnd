@@ -73,13 +73,7 @@ function ListaTema() {
                             <CardActions className="chari2">
                                 <Box display='flex' justifyContent='center' alignItems="center" mb={1.5}>
 
-                                    <Box display='flex' justifyContent='center' alignItems="center">
-                                        <FormControlLabel
-                                            control={<Checkbox icon={<FavoriteBorder />}
-                                                checkedIcon={<Favorite />}
-                                                name="checkedH" />}
-                                            label="Curtir"
-                                        />
+                                    <Box display='flex' justifyContent='center' alignItems="center">                                            
                                         <Link to={`/formularioTema/${tema.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
                                                 <Button className='btn-atualizar'>
