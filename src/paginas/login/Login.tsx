@@ -89,7 +89,7 @@ function Login() {
             })
 
         } catch (error) {
-            toast.success('Os dados do usuário estão inconsistentes!',{
+            toast.error('Os dados do usuário estão inconsistentes!',{
                 position: 'top-right',
                 autoClose: 2000,
                 hideProgressBar: false,
