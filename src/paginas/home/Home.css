@@ -12,3 +12,15 @@
 {
     text-decoration: none;
 }
+
+.profile-container{
+    position:fixed!important;
+    left: 0px;
+    top: 12vh;
+}
+
+.lista-postagem-container{
+    display: flex!important;
+    flex-direction: column;
+    justify-content: right;
+}

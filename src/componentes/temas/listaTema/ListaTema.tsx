@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Box, Button, Card, CardActions, CardContent, Checkbox, FormControlLabel, Typography } from "@material-ui/core";
+import { Box, Button, Card, CardActions, CardContent, Checkbox, FormControlLabel, Grid, Typography } from "@material-ui/core";
 import Tema from "../../../models/Tema";
 import './ListaTema.css';
 
@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/UserReducer";
 import { toast } from 'react-toastify';
 import { Favorite, FavoriteBorder } from "@material-ui/icons";
+import Profile from "../../estaticos/profile/Profile";
 
 function ListaTema() {
 
@@ -51,52 +52,61 @@ function ListaTema() {
 
     return (
         <>
-            <Typography gutterBottom>
-                Tema
-            </Typography>
-            {
-                temas.map(tema => (
-                    <Box m={2}>
-                        <Card variant='outlined' className="caixa-post2">
-                            <CardContent>
+           <Grid container direction="row" justifyContent="center" >
+                <Grid xs={3} className='profile-container'>
+                    <Profile />
+                </Grid>
+                <Grid xs={9} >
+                    <Typography className='titulo-lista-tema'>
+                        Temas
+                    </Typography>
+                    {
+                        temas.map(tema => (
+                            <Box m={2}>
+                                <Card variant='outlined' className="caixa-post2">
+                                    <CardContent>
 
-                                <Typography variant="h5" component='h2'>
-                                    {tema.nome}
-                                </Typography>
+                                        <Typography variant="h5" component='h2'>
+                                            {tema.nome}
+                                        </Typography>
 
-                                <Typography variant="h5" component='h2'>
-                                    {tema.descricao}
-                                </Typography>
+                                        <Typography variant="h5" component='h2'>
+                                            {tema.descricao}
+                                        </Typography>
 
-                            </CardContent>
+                                    </CardContent>
 
-                            <CardActions className="chari2">
-                                <Box display='flex' justifyContent='center' alignItems="center" mb={1.5}>
+                                    <CardActions className="chari2">
+                                        <Box display='flex' justifyContent='center' alignItems="center" mb={1.5}>
 
-                                    <Box display='flex' justifyContent='center' alignItems="center">                                            
-                                        <Link to={`/formularioTema/${tema.id}`} className='text-decorator-none'>
-                                            <Box mx={1}>
-                                                <Button className='btn-atualizar'>
-                                                    Atualizar
-                                                </Button>
+                                            <Box display='flex' justifyContent='center' alignItems="center">
+                                                <Link to={`/formularioTema/${tema.id}`} className='text-decorator-none'>
+                                                    <Box mx={1}>
+                                                        <Button className='btn-atualizar'>
+                                                            Atualizar
+                                                        </Button>
+                                                    </Box>
+                                                </Link>
+
+                                                <Link to={`/deletarTema/${tema.id}`} className='text-decorator-none'>
+                                                    <Box mx={1}>
+                                                        <Button className='btn-deletar'>
+                                                            Deletar
+                                                        </Button>
+                                                    </Box>
+                                                </Link>
                                             </Box>
-                                        </Link>
-
-                                        <Link to={`/deletarTema/${tema.id}`} className='text-decorator-none'>
-                                            <Box mx={1}>
-                                                <Button className='btn-deletar'>
-                                                    Deletar
-                                                </Button>
-                                            </Box>
-                                        </Link>
-                                    </Box>
-                                </Box>
-                            </CardActions>
-                        </Card>
-                    </Box>
-                ))
-            }
+                                        </Box>
+                                    </CardActions>
+                                </Card>
+                            </Box>
+                        ))
+                    }
+                </Grid>
+            </Grid>
         </>
     );
 }
+
+
 export default ListaTema

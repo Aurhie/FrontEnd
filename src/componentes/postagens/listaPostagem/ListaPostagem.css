@@ -14,5 +14,13 @@
 }
 
 .chari{
-    display:flex; justify-content: space-between; align-items:center;
+    display:flex; 
+    justify-content: space-between; 
+    align-items:center;
+}
+
+.titulo-lista-post{
+    text-align: center!important;
+    font-weight: bold!important;
+    font-size: 30px!important;
 }

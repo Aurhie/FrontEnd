@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Typography } from '@material-ui/core'
-import { useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { Box, Button, Typography } from '@material-ui/core'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useHistory } from 'react-router-dom'
 import { UserState } from '../../../store/tokens/UserReducer'
 
 import User from '../../../models/User'
@@ -9,6 +9,7 @@ import { buscaId } from '../../../service/Service'
 
 import './Profile.css'
 import { toast } from 'react-toastify'
+import { addToken } from '../../../store/tokens/actions'
 
 function Profile() {
 
@@ -23,6 +24,23 @@ function Profile() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     )
+
+    const dispatch = useDispatch();
+
+    function goLogout() {
+        dispatch(addToken(''));
+        toast.info('Usuário deslogado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "dark",
+            progress: undefined,
+        });
+        history.push('/login')
+    }
 
     const [user, setUser] = useState<User>({
         id: +id,    // Faz uma conversão de String para Number
@@ -90,16 +108,27 @@ function Profile() {
                         <p className="textoProfile">Tipo de usuário</p>
                     </Box>
 
-                    <Box className="boxLogout">
-                        <p className="logout">Logout</p>
-                    </Box>
+
                 </Box>
 
+                <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
+                <Box className="boxLogout">
+                    <p className="logout">Logout</p>
+                </Box>
+                </Box>
+            </Box>
 
-            </Box>
+            <Link to='/formularioPostagem' className='text-decorator-none'>
             <Box className="profilePostagem">
-                <Typography className="btnProfile">Nova Postagem</Typography>
+                <Button className="btnProfile">Nova Postagem</Button>
             </Box>
+            </Link>
+
+            <Link to='/formularioTema' className='text-decorator-none'>
+            <Box className="profilePostagem">
+                <Button className="btnProfile">Novo Tema</Button>
+            </Box>
+           </Link>
         </Box>
     )
 }

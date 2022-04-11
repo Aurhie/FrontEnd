@@ -55,13 +55,13 @@ function Navbar() {
                         </Box>
                     </Link>
 
-                    <Link to='/postagens' className='text-decorator-none'>
+                    {/* <Link to='/postagens' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h5" color="inherit">
                                 Postagens
                             </Typography>
                         </Box>
-                    </Link>
+                    </Link> */}
 
                     <Link to='/temas' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
@@ -70,25 +70,7 @@ function Navbar() {
                             </Typography>
 
                         </Box>
-                    </Link>    
-
-                    <Link to='/formularioPostagem' className='text-decorator-none'>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
-                                Cadastrar Postagem
-                            </Typography>
-
-                        </Box>
-                    </Link>  
-
-                    <Link to='/formularioTema' className='text-decorator-none'>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
-                                Cadastrar Tema
-                            </Typography>
-
-                        </Box>
-                    </Link>                   
+                    </Link>
 
                     <Link to='/sobre-nos' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
@@ -98,29 +80,27 @@ function Navbar() {
                         </Box>
                     </Link>
 
-
-                     <Link to='/login' className='text-decorator-none'>
-                            <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
-                                <Typography variant="h5" color="inherit">
-                                    Logout
-                                </Typography>
-                            </Box>
-                        </Link>
-
                 </Box>
-                    {/* Barra de pesquisa */}
-                    <div className='container'>
-            <div id="searchWrapper">
-                <input
-                    type="text"
-                    name="searchBar"
-                    id="searchBar"
-                    placeholder="O que procura?"
-                />
-            </div>
-            <ul id="charactersList"></ul>
-        </div>
-        <script src="app.js"></script>
+                
+                {/* Barra de pesquisa */}
+                <div className='container'>
+                    <div id="searchWrapper">
+                        <input
+                            type="text"
+                            name="searchBar"
+                            id="searchBar"
+                            placeholder="O que procura?"
+                        />
+                    </div>
+                    <ul id="charactersList"></ul>
+                </div>
+                <script src="app.js"></script>
+
+                    <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
+                        <Typography variant="h5" color="inherit">
+                            Logout
+                        </Typography>
+                    </Box>
 
             </Toolbar>
         </AppBar >

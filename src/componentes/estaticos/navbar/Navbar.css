@@ -1,7 +1,7 @@
 .cursor
 {
 cursor:pointer;
-color:#adadad;
+color:#ffffff;
 }
 
 .navCor
@@ -26,6 +26,7 @@ color:#adadad;
 
 /* barra de pesquisa */
 .container {
+    margin-left: 29vw!important;
     padding: 10px;
     margin: 0 auto;
     max-width: 1000px;

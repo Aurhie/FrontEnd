@@ -52,7 +52,7 @@ function ListaPostagem() {
 
     return (
         <>
-            <Typography gutterBottom>
+            <Typography gutterBottom className="titulo-lista-post">
                 Postagens
             </Typography>
             {
