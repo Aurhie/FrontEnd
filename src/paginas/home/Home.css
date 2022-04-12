@@ -13,14 +13,19 @@
     text-decoration: none;
 }
 
-.profile-container{
+/* .profile-container{
     position:fixed!important;
     left: 0px;
     top: 12vh;
-}
+} */
 
-.lista-postagem-container{
+/* .lista-postagem-container{
     display: flex!important;
     flex-direction: column;
+    justify-content: right;
+} */
+
+.container-principal{
+    display:flex;
     justify-content: right;
 }

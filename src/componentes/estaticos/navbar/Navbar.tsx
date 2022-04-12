@@ -41,16 +41,16 @@ function Navbar() {
     if (token != "") {
         navbarComponent = <AppBar position="static">
             <Toolbar variant="dense" className='navCor'>
-                <Box mx={1} className='cursor logo'>
-
-
-                </Box>
+                <Link to='/home' className='text-decorator-none'>
+                    <Box mx={1} className='cursor logo'>
+                    </Box>
+                </Link>
 
                 <Box display='flex' justifyContent='start' alignItems='center'>
                     <Link to='/home' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h5" color="inherit">
-                                Home
+                                Postagens
                             </Typography>
                         </Box>
                     </Link>
@@ -81,7 +81,7 @@ function Navbar() {
                     </Link>
 
                 </Box>
-                
+
                 {/* Barra de pesquisa */}
                 <div className='container'>
                     <div id="searchWrapper">
@@ -96,11 +96,11 @@ function Navbar() {
                 </div>
                 <script src="app.js"></script>
 
-                    <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
-                        <Typography variant="h5" color="inherit">
-                            Logout
-                        </Typography>
-                    </Box>
+                <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
+                    <Typography variant="h5" color="inherit">
+                        Logout
+                    </Typography>
+                </Box>
 
             </Toolbar>
         </AppBar >

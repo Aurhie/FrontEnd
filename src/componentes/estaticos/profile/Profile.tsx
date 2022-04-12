@@ -108,27 +108,28 @@ function Profile() {
                         <p className="textoProfile">Tipo de usuário</p>
                     </Box>
 
+                    {/* <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
+                        <Box className="boxLogout">
+                            <p className="logout">Logout</p>
+                        </Box>
+                    </Box> */}
 
                 </Box>
 
-                <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
-                <Box className="boxLogout">
-                    <p className="logout">Logout</p>
-                </Box>
-                </Box>
+
             </Box>
 
             <Link to='/formularioPostagem' className='text-decorator-none'>
-            <Box className="profilePostagem">
-                <Button className="btnProfile">Nova Postagem</Button>
-            </Box>
+                <Box className="profilePostagem">
+                    <Button className="btnProfile">Nova Postagem</Button>
+                </Box>
             </Link>
 
             <Link to='/formularioTema' className='text-decorator-none'>
-            <Box className="profilePostagem">
-                <Button className="btnProfile">Novo Tema</Button>
-            </Box>
-           </Link>
+                <Box className="profilePostagem">
+                    <Button className="btnProfile">Novo Tema</Button>
+                </Box>
+            </Link>
         </Box>
     )
 }
