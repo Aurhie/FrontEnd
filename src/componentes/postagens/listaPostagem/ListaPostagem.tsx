@@ -60,11 +60,11 @@ function ListaPostagem() {
                     <Box m={2}>
                         <Card variant='outlined' className="caixa-post">
                             <CardContent>
-                                <Typography variant='h5' component='h2'>
+                                <Typography variant='h5' component='h2' className="tituloPost">
                                     {postagem.titulo}
                                 </Typography>
 
-                                <Typography variant='body2' component='p'>
+                                <Typography variant='body2' component='p' className="textoPost">
                                     {postagem.texto}
                                 </Typography>
                             </CardContent>
@@ -74,15 +74,17 @@ function ListaPostagem() {
 
                                     <Box display='flex' justifyContent='center' alignItems="center">
                                         <FormControlLabel
-                                            control={<Checkbox icon={<FavoriteBorder />}
+                                            control={<Checkbox
+                                                icon={<FavoriteBorder />}
                                                 checkedIcon={<Favorite />}
-                                                name="checkedH" />}
-                                            label="Curtir"
+                                                name="checkedH"
+                                                className="btnCurtir" />}
+                                            label="CURTIR"
                                         />
 
                                         <Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
-                                                <Button className='btn-atualizar'>
+                                                <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost'>
                                                     Atualizar
                                                 </Button>
                                             </Box>
@@ -90,18 +92,18 @@ function ListaPostagem() {
 
                                         <Link to={`/DeletarPostagem/${postagem.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
-                                                <Button className='btn-deletar'>
+                                                <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
                                                     Deletar
                                                 </Button>
                                             </Box>
                                         </Link>
-                                    </Box>                                    
+                                    </Box>
                                 </Box>
                                 <Box mx={1} >
-                                        <Typography variant='body2' component='p' className="tema-postagens">
-                                            {postagem.tema?.nome}
-                                        </Typography>
-                                 </Box>
+                                    <Typography variant='body2' component='p' className="tema-postagens">
+                                        {postagem.tema?.nome}
+                                    </Typography>
+                                </Box>
                             </CardActions>
                         </Card>
                     </Box>

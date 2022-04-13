@@ -3,12 +3,10 @@
     flex-direction: column;
     align-items: center;
     border-radius: 7px;
-    background-color: #a6c1ee;
-    margin: 10px;
+    background-color: #03051B;
+    margin: 64px 10px 10px 10px;
     height: 67vh;
     width: 50vh;
-    
-
 }
 
 .card-container-imagem{
@@ -16,7 +14,6 @@
     justify-content: center;
     align-items: center;
     width: auto;
-    /* margin: 20px; */
 }
 
 .card-container-info{
@@ -24,64 +21,64 @@
     flex-direction: column;
     align-items: center;
     justify-content: left!important;
-    /* margin: 32px 32px 32px 56px; */
 }
 
 .card-imagem{
-    /* max-height: 500px; */
-    border-radius: 32px;
+    /* border-radius: 32px; */
+    border-radius: 120px;
     max-width: 220px!important;
     max-height: 220px!important;
     margin: 20px;
-    /* object-fit: cover; */
 }
 
 h1 {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 500;
     margin: 0 0 0 0;
-    color: #4e4e4f;
+    color: #FFF;
     text-align: center;
 }
 
 .textoProfile {
     margin: 0 0 25px 0;
-    color: #606061;
+    color: #FDFCEF;
     text-align: center;
 }
-
-.logout{
-    color: #000;
-    margin-top: 10px;
-    font-weight: bold;
-    text-align: right;
-}
-
-.logout:hover{
-    color: #4e4e4f;
-    cursor: pointer;
-}
-
-/* .boxLogout{
-     z-index: 1000;
-}  */
 
 .profilePostagem{
     display: flex!important;
     justify-content: center!important;
-    border-radius:  10px 10px ;
-    background-color: #a6c1ee!important;
+    border-radius:  7px 7px ;
+    background-color: #03051B!important;
     margin: 10px;
     padding: 5px;
-    min-width: 49vh!important
+    border: #03051B solid 2px;
+    width: 48vh;
 }
 
 .btnProfile{
     font-size: 16px!important;
     font-weight: bold!important;
-    color: #4e4e4f!important;
-    background-color: #a6c1ee!important;
-   
-   
+    color: #FFF!important;
+    width: 100%;
+}
 
+.profilePostagem:hover{
+    display: flex!important;
+    justify-content: center!important;
+    border-radius:  7px 7px ;
+    border: #03051B solid 2px;
+    background-color: #F4F3E6!important;
+    margin: 10px;
+    padding: 5px;
+    width: 48vh;
+    
+}
+
+.btnProfile:hover{
+    font-size: 16px !important;
+    font-weight: bold !important;
+    width: 100%;
+    color: #03051B!important;
+    background-color: #F4F3E6 !important;
 }

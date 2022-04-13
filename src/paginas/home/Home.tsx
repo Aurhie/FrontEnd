@@ -38,7 +38,7 @@ function Home() {
     return (
         <>
         
-            <Grid container direction="row" justifyContent='center' >
+            <Grid container direction="row" justifyContent='center' className='corFundo'>
                 <Grid xs={3} className='profile-container'>
                     <Profile/>
                 </Grid>

@@ -1,3 +1,8 @@
+.corFundo{
+    background-color: #F4F3E6;
+    height: 100vh;
+}
+
 .titulo{
     color: blue;
     text-align: center;
@@ -13,11 +18,9 @@
     text-decoration: none;
 }
 
-/* .profile-container{
-    position:fixed!important;
-    left: 0px;
-    top: 12vh;
-} */
+.profile-container{
+   margin-top: 10px;
+}
 
 /* .lista-postagem-container{
     display: flex!important;
