@@ -1,4 +1,4 @@
-import { Box, Grid, TextField, Typography, Button } from "@material-ui/core";
+import { Box, Grid, TextField, Typography, Button, FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@material-ui/core";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -10,7 +10,7 @@ import './CadastroUsuario.css'
 function CadastroUsuario() {
 
     let history = useHistory();
-    const [confirmarSenha,setConfirmarSenha] = useState<String>("")
+    const [confirmarSenha, setConfirmarSenha] = useState<String>("")
 
     /*Atualiza a partir do que o usuario está digitando*/
     const [user, setUser] = useState<User>(
@@ -18,20 +18,20 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
-            foto:'',
+            foto: '',
             senha: '',
-            tipo:''
+            tipo: ''
         })
-    
+
     /*Atualiza a partir da resposta do back-end*/
     const [userResult, setUserResult] = useState<User>(
         {
             id: 0,
             nome: '',
             usuario: '',
-            foto:'',
+            foto: '',
             senha: '',
-            tipo:''
+            tipo: ''
         })
 
     useEffect(() => {
@@ -40,30 +40,57 @@ function CadastroUsuario() {
         }
     }, [userResult])/*Este array dispara a função toda vez que o userResult é alterado*/
 
-    
+
     /*Atualiza o estado do setUser a partir do que está sendo digitado*/
     function updatedModel(e: ChangeEvent<HTMLInputElement>) {
-        
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
-        
+
     }
 
     /**Atualiza o estado do confirmarSenha a partir do que foi digitado*/
-    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>){
+    function confirmarSenhaHandle(e: ChangeEvent<HTMLInputElement>) {
         setConfirmarSenha(e.target.value)
     }
 
     /**Realiza o cadastro do usuário fazendo a comparação das senhas dentro do if */
     async function cadastrar(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault()
-        if(confirmarSenha === user.senha && user.senha.length >= 8){
-        //Tenta executar o cadastro
-        try {
-            await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-            toast.success('Usúario cadastrado com sucesso!',{
+        if (confirmarSenha === user.senha && user.senha.length >= 8) {
+            //Tenta executar o cadastro
+            try {
+                await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
+                toast.success('Usúario cadastrado com sucesso!', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'dark',
+                    progress: undefined
+                })
+
+                //Se houver erro, pegue o Erro e retorna uma mensagem (alert)
+            } catch (error) {
+
+                //Pode modificar a mensagem de acordo com o erro 
+                toast.error('Usúario já cadastrado, por favor insira dados válidos.', {
+                    position: 'top-right',
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: 'dark',
+                    progress: undefined
+                })
+            }
+
+        } else {
+            toast.error('Dados inconsistentes', {
                 position: 'top-right',
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -74,40 +101,12 @@ function CadastroUsuario() {
                 progress: undefined
             })
 
-        //Se houver erro, pegue o Erro e retorna uma mensagem (alert)
-        } catch (error) {
-            
-            //Pode modificar a mensagem de acordo com o erro 
-            toast.error('Usúario já cadastrado, por favor insira dados válidos.',{
-                position: 'top-right',
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: 'dark',
-                progress: undefined
-            })
+            setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
+            setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha
         }
-
-    } else {
-        toast.error('Dados inconsistentes',{
-            position: 'top-right',
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: 'dark',
-            progress: undefined
-        })
-
-        setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
-        setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha
     }
-}
 
-    
+
     return (
         <Grid container direction="row" justifyContent="center" alignItems="center">
             <Grid xs={6} className='imagem2'></Grid>
@@ -143,12 +142,12 @@ function CadastroUsuario() {
                             variant='outlined'
                             name='usuario'
                             margin='normal'
-                            type = 'email'
+                            type='email'
                             placeholder="Exemplo: usuario@email.com"
                             required
                             fullWidth>
                         </TextField>
-             
+
                         <TextField
                             value={user.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
@@ -161,18 +160,19 @@ function CadastroUsuario() {
                             fullWidth>
                         </TextField>
 
-                        <TextField
-                            value={user.tipo}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
-                            id='tipo'
-                            label='tipo de usuario'
-                            variant='outlined'
-                            name='tipo'
-                            margin="normal"
-                            required
-                            placeholder="Exemplo: Alune ou Voluntárie"
-                            fullWidth>
-                        </TextField>
+                        <FormControl>
+                            <FormLabel id="demo-row-radio-buttons-group-label">Tipo</FormLabel>
+                            <RadioGroup
+                                row
+                                aria-labelledby="demo-row-radio-buttons-group-label"
+                                name="tipo"
+                                value={user.tipo}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}
+                            >
+                                <FormControlLabel value={'Voluntárie'} control={<Radio />} label="Voluntárie" />
+                                <FormControlLabel value={"Alune"} control={<Radio />} label="Alune" />
+                            </RadioGroup>
+                        </FormControl>
 
                         <TextField
                             value={user.senha}
@@ -208,9 +208,9 @@ function CadastroUsuario() {
                                     Cancelar
                                 </Button>
                             </Link>
-                                <Button type='submit' variant='contained' className='btnCadastrar'>
-                                    Cadastrar
-                                </Button>
+                            <Button type='submit' variant='contained' className='btnCadastrar'>
+                                Cadastrar
+                            </Button>
                         </Box>
                     </form>
                 </Box>
