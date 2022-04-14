@@ -1,41 +1,59 @@
-.icon{
-    font-size: 150px !important;
+.foto{
     width: 150px;
     /* border-radius: 120% !important; */
-    padding: 20px 0 0px 0;
-    border-top-left-radius: 170px;
-    border-top-right-radius: 170px;
-    border-bottom-left-radius: 130px;
-    border-bottom-right-radius: 130px;
+    padding: 20px;
+    border-radius: 360px;
 }
 
-.integrante{
+.integrante-right{
     display: flex;
-    justify-content: center;
+    justify-content: right!important;
     margin: 10px;
     border: 2px ;
-    background-color: #1c1e3d;
     border-radius: 7px;
+    background-color: #1c1e3d;
+}
+
+.integrante-left{
+    display: flex;
+    justify-content: left!important;
+    margin: 10px;
+    border: 2px ;
+    border-radius: 7px;
+    background-color: #1c1e3d;
 }
 
 .nomes{
     margin: 10px !important;
     font-size: 18px !important;
+    margin-bottom: 10;
     text-align: center;
     color: #ffffff;
 }
 
+.texto{
+    padding: 50px;
+    font-size: 18px !important;
+    text-align: justify;
+    color: #ffffff;
+}
+
 .redes{
-    margin: 0 10px 20px 10px;
-    /* font-size: 10px !important; */
-    width: 40px;
+    display: flex!important;
+    align-items: center!important;
+    flex-direction: column!important;
+    font-size: 80px!important;
+    margin: 10px!important;;
+    padding: 5px!important;
+    
 }
 
 .tituloSobreNos{
-    padding: 20px 60px 0 60px;
-    font-size: 60px !important;
+    padding: 20px;
+    text-align: center;
+    color:#1c1e3d;
     font-weight: bold !important;
-    background-image: url('https://github.com/ColaboraTechPI/Docs/blob/main/Logo/Transparente/Vers%C3%A3o%20negativa%20-%20vertical.png');
+    
 }
 
 .textoSobreNos{
