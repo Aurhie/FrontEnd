@@ -156,7 +156,7 @@ function CadastroPost() {
 
 
     function back() {
-        history.push("/postagens")
+        history.push("/home")
     }
 
 

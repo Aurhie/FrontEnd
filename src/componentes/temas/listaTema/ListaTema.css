@@ -2,8 +2,9 @@
     text-decoration: none!important;
 }
 .caixa-post2{
-    background-image: linear-gradient(to right,#a6c1ee,#fbc2eb) !important;
-    padding: 4vh !important;
+    background-color: #FDFCEF !important;
+    border: none !important;
+    padding: 3vh !important;
 }
 
 .chari2{
@@ -11,7 +12,8 @@
 }
 
 .titulo-lista-tema{
-    text-align: center;
+    text-align: center!important;
     font-weight: bold!important;
     font-size: 30px!important;
+    margin-top: 2vh !important;
 }

@@ -52,7 +52,7 @@ function ListaTema() {
 
     return (
         <>
-           <Grid container direction="row" justifyContent="center" >
+           <Grid container direction="row" justifyContent="center" className='corFundo'>
                 <Grid xs={3} className='profile-container'>
                     <Profile />
                 </Grid>
@@ -66,11 +66,11 @@ function ListaTema() {
                                 <Card variant='outlined' className="caixa-post2">
                                     <CardContent>
 
-                                        <Typography variant="h5" component='h2'>
+                                        <Typography variant="h5" component='h2' className="tituloPost">
                                             {tema.nome}
                                         </Typography>
 
-                                        <Typography variant="h5" component='h2'>
+                                        <Typography variant="h5" component='h2' className="textoPost">
                                             {tema.descricao}
                                         </Typography>
 
@@ -82,7 +82,7 @@ function ListaTema() {
                                             <Box display='flex' justifyContent='center' alignItems="center">
                                                 <Link to={`/formularioTema/${tema.id}`} className='text-decorator-none'>
                                                     <Box mx={1}>
-                                                        <Button className='btn-atualizar'>
+                                                    <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost'>
                                                             Atualizar
                                                         </Button>
                                                     </Box>
@@ -90,7 +90,7 @@ function ListaTema() {
 
                                                 <Link to={`/deletarTema/${tema.id}`} className='text-decorator-none'>
                                                     <Box mx={1}>
-                                                        <Button className='btn-deletar'>
+                                                    <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
                                                             Deletar
                                                         </Button>
                                                     </Box>
