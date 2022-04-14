@@ -17,29 +17,36 @@ function Footer() {
 
     var footerComponent;
     if (token != "") {
-        footerComponent=
-        <Grid container direction="row" justifyContent="center" alignItems="center" className='footer-container'>
-            <Grid alignItems="center" item xs={12}>
-                <Box className='box1'>
-                    <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                        <Typography variant="h5" align="center" gutterBottom className='text'>Nos siga nas redes sociais! </Typography>
+        footerComponent =
+            <Grid container direction="row" justifyContent="center" alignItems="center" className='footer-container'>
+                <Grid alignItems="center" item xs={4} className="boxFooter">
+                    <Box className='box1'>
+                        <Box display="flex" alignItems="center" justifyContent="center">
+                            <a href="https://github.com/ColaboraTechPI" target="_blank">
+                                <GitHubIcon className='redes' />
+                            </a>
+                        </Box>
                     </Box>
-                    <Box display="flex" alignItems="center" justifyContent="center">
-                        <a href="https://github.com/ColaboraTechPI" target="_blank">
-                            <GitHubIcon className='redes' />
-                        </a>
+                </Grid>
+
+                <Grid alignItems="center" item xs={4} className="boxFooter">
+                    <Box className='boxcenter'>
+                        <Box display="flex" alignItems="center" justifyContent="center" className="logoFooter">
+                        </Box>
                     </Box>
-                </Box>
-                <Box className='box2'>
-                    <Box paddingTop={1}>
-                        <Typography variant="subtitle2" align="center" gutterBottom className='text' >Copyright © 2022 by Colaboratech</Typography>
+                </Grid>
+
+                <Grid alignItems="center" item xs={4} className="boxFooter">
+                    <Box className='box2'>
+                        <Box paddingTop={1}>
+                            <Typography variant="subtitle2" align="right" gutterBottom className='text' >Copyright © 2022 by Colaboratech</Typography>
+                        </Box>
+                        <Box>
+                            <Typography variant="subtitle2" gutterBottom className='text' align="right">All Rights reserved.</Typography>
+                        </Box>
                     </Box>
-                    <Box>
-                        <Typography variant="subtitle2" gutterBottom className='text' align="center">All Rights reserved</Typography>
-                    </Box>
-                </Box>
+                </Grid>
             </Grid>
-        </Grid>
     }
     return (
         <>

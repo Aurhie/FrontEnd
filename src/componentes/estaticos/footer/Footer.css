@@ -1,19 +1,30 @@
+.boxFooter{
+    background-color: #03051b !important;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
 .box1
 {
-    background-color: #03051b !important;
-    height: 120px;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .box2
 {
-    background-color: #03051b !important;
-    height: 60px;
+    display: inline;
+    justify-content: flex-end !important;
+    width: 100%;
+    margin: 0 !important;
+    margin-right: 5vh !important;
 }
 
 .redes
 {
     font-size: 60px !important;
     color: #ffffff;
+    margin: 0 !important;
+    margin-left: 5vh !important;
 }
 
 .text
@@ -23,4 +34,20 @@
 
 .footer-container{
    position: relative;
+}
+
+.boxcenter{
+    height: 15vh;
+    width: 40vh;
+    margin-left: 14vh;
+}
+
+.logoFooter{
+    background-image:url(https://raw.githubusercontent.com/ColaboraTechPI/Docs/main/Logo/Transparente/Versão%20negativa%20-%20horizontal%20%5BSF%5D.png);
+    display: flex;
+    justify-content: center !important;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center !important;
 }
