@@ -52,10 +52,11 @@ function ListaTema() {
 
     return (
         <>
-           <Grid container direction="row" justifyContent="center" className='corFundo'>
+            <Grid container direction="row" justifyContent="center" className='corFundo'>
                 <Grid xs={3} className='profile-container'>
                     <Profile />
                 </Grid>
+
                 <Grid xs={9} >
                     <Typography className='titulo-lista-tema'>
                         Temas
@@ -82,7 +83,7 @@ function ListaTema() {
                                             <Box display='flex' justifyContent='center' alignItems="center">
                                                 <Link to={`/formularioTema/${tema.id}`} className='text-decorator-none'>
                                                     <Box mx={1}>
-                                                    <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost'>
+                                                        <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost'>
                                                             Atualizar
                                                         </Button>
                                                     </Box>
@@ -90,7 +91,7 @@ function ListaTema() {
 
                                                 <Link to={`/deletarTema/${tema.id}`} className='text-decorator-none'>
                                                     <Box mx={1}>
-                                                    <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
+                                                        <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
                                                             Deletar
                                                         </Button>
                                                     </Box>
@@ -104,6 +105,7 @@ function ListaTema() {
                     }
                 </Grid>
             </Grid>
+            
         </>
     );
 }
