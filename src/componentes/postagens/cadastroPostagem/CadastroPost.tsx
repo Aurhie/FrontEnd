@@ -8,6 +8,7 @@ import { busca, buscaId, post, put } from '../../../service/Service';
 import { UserState } from '../../../store/tokens/UserReducer';
 import './CadastroPost.css'
 import { toast } from 'react-toastify';
+import User from '../../../models/User'
 
 function CadastroPost() {
 
@@ -17,6 +18,10 @@ function CadastroPost() {
     const token = useSelector < UserState, UserState["tokens"]> (
         (state) => state.tokens
     );
+
+    const userId = useSelector<UserState, UserState['id']>(
+        (state) => state.id
+    )
 
     useEffect(() => {
         if (token === "") {
@@ -40,12 +45,23 @@ function CadastroPost() {
         descricao: ""
     })
 
+    const [user, setUser] = useState<User>({
+        id: +userId,
+        nome: '',
+        usuario:'',
+        senha:'',
+        foto:'',
+        tipo:''
+    })
+
     const [postagem, setPostagem] = useState<Postagem>({
         id: 0,
         titulo: "",
         texto: "",
+        data:"",
         curtir: 0,
-        tema: null
+        tema: null,
+        usuario: null
     })
 
     useEffect(() => {
@@ -82,7 +98,8 @@ function CadastroPost() {
         setPostagem({
             ...postagem,
             [e.target.name]: e.target.value,
-            tema: tema
+            tema: tema,
+            usuario: user
         })
     }
 
@@ -106,6 +123,7 @@ function CadastroPost() {
                     theme: 'dark',
                     progress: undefined
                 })
+                back()
             } catch (error) {
                 console.log(`Error: ${error}`)
                 toast.error('Erro ao atualizar postagem, por favor verifique os campos.',{
@@ -137,6 +155,7 @@ function CadastroPost() {
                     theme: 'dark',
                     progress: undefined
                 })
+                back()
             } catch (error) {
                 console.log(`Error: ${error}`)
                 toast.error('Erro ao cadastrar postagem, por favor verifique os campos.',{
@@ -151,7 +170,7 @@ function CadastroPost() {
                 });
             }
         }
-        back()
+        
     }
 
 

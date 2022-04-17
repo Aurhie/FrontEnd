@@ -60,9 +60,29 @@ function ListaPostagem() {
                     <Box m={2}>
                         <Card variant='outlined' className="caixa-post">
                             <CardContent>
+
+                                <Box className="user-data">
+                                    <img src={postagem.usuario?.foto} className='user-picture' />
+
+                                    <Box>
+                                        <Typography variant='h5' component='h2' className="tituloPost">
+                                            {postagem.usuario?.nome}
+                                            <br />
+                                        </Typography>    
+                                        <Typography variant="body2" component="p" className='data-postagem'>
+                                            {postagem.data.substring(8, 10) + '/' +
+                                                postagem.data.substring(5, 7) + '/' +
+                                                postagem.data.substring(0, 4) + ' às ' +
+                                                postagem.data.substring(11, 19)}
+                                        </Typography>
+                                    </Box>
+
+                                </Box>
+
                                 <Typography variant='h5' component='h2' className="tituloPost">
                                     {postagem.titulo}
                                 </Typography>
+
 
                                 <Typography variant='body2' component='p' className="textoPost">
                                     {postagem.texto}

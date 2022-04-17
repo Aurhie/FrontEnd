@@ -44,3 +44,15 @@
 .btnPost{
     font-weight:400 !important;
 }
+
+.user-data{
+    display: flex;
+    flex-direction: row!important;
+    align-items: center;
+}
+
+.user-picture{
+    height: 75px!important;
+    border-radius: 360px;
+    margin: 10px;
+}
