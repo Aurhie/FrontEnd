@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './componentes/estaticos/navbar/Navbar';
 import Footer from './componentes/estaticos/footer/Footer';
@@ -13,11 +12,11 @@ import CadastroTema from './componentes/temas/cadastroTema/CadastroTema';
 import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 import Sobrenos from './paginas/sobrenos/Sobrenos'
-import logo from './logo.svg';
 import {Provider} from 'react-redux';
 import store from './store/store';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ProfilePage from './paginas/profilePage/ProfilePage';
 
 
 function App() {
@@ -33,6 +32,10 @@ function App() {
 
           <Route path='/login'>
             <Login />
+          </Route>
+
+          <Route path='/perfil'>
+            <ProfilePage />
           </Route>
 
           <Route exact path='/'>

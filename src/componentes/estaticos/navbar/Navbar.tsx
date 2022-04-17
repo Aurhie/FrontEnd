@@ -47,6 +47,16 @@ function Navbar() {
                 </Link>
 
                 <Box display='flex' justifyContent='start' alignItems='center'>
+                    <Link to='/perfil' className='text-decorator-none'>
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h5" color="inherit">
+                                Meu Perfil
+                            </Typography>
+                        </Box>
+                    </Link>
+                </Box>
+
+                <Box display='flex' justifyContent='start' alignItems='center'>
                     <Link to='/home' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h5" color="inherit">
@@ -54,14 +64,6 @@ function Navbar() {
                             </Typography>
                         </Box>
                     </Link>
-
-                    {/* <Link to='/postagens' className='text-decorator-none'>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h5" color="inherit">
-                                Postagens
-                            </Typography>
-                        </Box>
-                    </Link> */}
 
                     <Link to='/temas' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>

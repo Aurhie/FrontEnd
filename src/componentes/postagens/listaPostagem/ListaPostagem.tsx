@@ -98,6 +98,8 @@ function ListaPostagem() {
                             <CardActions className="chari">
                                 <Box display='flex' justifyContent='center' alignItems="center" mb={1.5}>
 
+                                {postagem.usuario?.id.toString() !== userId ?
+                                <>
                                     <Box display='flex' justifyContent='center' alignItems="center">
                                         <FormControlLabel
                                             control={<Checkbox
@@ -107,7 +109,11 @@ function ListaPostagem() {
                                                 className="btnCurtir" />}
                                             label="CURTIR"
                                         />
-                                    </Box>
+                                        
+                                        
+                                    </Box></>
+                                    : false}
+
                                     {postagem.usuario?.id.toString() === userId ?
                                         <><Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
