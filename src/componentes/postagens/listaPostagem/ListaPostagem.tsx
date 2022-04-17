@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 import { UserState } from "../../../store/tokens/UserReducer";
 import { Favorite, FavoriteBorder } from "@material-ui/icons";
 import { toast } from "react-toastify";
+import TabPostagem from "../tabPostagem/TabPostagem";
 
 
 function ListaPostagem() {
@@ -17,6 +18,10 @@ function ListaPostagem() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
+
+    const userId = useSelector<UserState, UserState['id']>(
+        (state) => state.id
+    )
 
     let history = useHistory();
 
@@ -46,6 +51,7 @@ function ListaPostagem() {
     }
 
     useEffect(() => {
+        console.log('id do user ' + userId)
         getPost()
 
     }, [postagens.length])
@@ -68,7 +74,7 @@ function ListaPostagem() {
                                         <Typography variant='h5' component='h2' className="tituloPost">
                                             {postagem.usuario?.nome}
                                             <br />
-                                        </Typography>    
+                                        </Typography>
                                         <Typography variant="body2" component="p" className='data-postagem'>
                                             {postagem.data.substring(8, 10) + '/' +
                                                 postagem.data.substring(5, 7) + '/' +
@@ -101,23 +107,24 @@ function ListaPostagem() {
                                                 className="btnCurtir" />}
                                             label="CURTIR"
                                         />
-
-                                        <Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
+                                    </Box>
+                                    {postagem.usuario?.id.toString() === userId ?
+                                        <><Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
                                                 <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost'>
                                                     Atualizar
                                                 </Button>
                                             </Box>
-                                        </Link>
+                                        </Link><Link to={`/DeletarPostagem/${postagem.id}`} className='text-decorator-none'>
+                                                <Box mx={1}>
+                                                    <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
+                                                        Deletar
+                                                    </Button>
+                                                </Box>
+                                            </Link></>
+                                        : false}
 
-                                        <Link to={`/DeletarPostagem/${postagem.id}`} className='text-decorator-none'>
-                                            <Box mx={1}>
-                                                <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
-                                                    Deletar
-                                                </Button>
-                                            </Box>
-                                        </Link>
-                                    </Box>
+
                                 </Box>
                                 <Box mx={1} >
                                     <Typography variant='body2' component='p' className="tema-postagens">
