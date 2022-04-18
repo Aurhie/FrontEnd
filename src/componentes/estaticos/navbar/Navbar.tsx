@@ -57,7 +57,7 @@ function Navbar() {
                 </Box>
 
                 <Box display='flex' justifyContent='start' alignItems='center'>
-                    <Link to='/home' className='text-decorator-none'>
+                    {/* <Link to='/home' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h5" color="inherit">
                                 Postagens
@@ -72,12 +72,21 @@ function Navbar() {
                             </Typography>
 
                         </Box>
+                    </Link> */}
+
+                    <Link to='/home' className='text-decorator-none'>
+                        <Box mx={1} className='cursor'>
+                            <Typography variant="h5" color="inherit">
+                                Feed
+                            </Typography>
+
+                        </Box>
                     </Link>
 
                     <Link to='/sobre-nos' className='text-decorator-none'>
                         <Box mx={1} className='cursor'>
                             <Typography variant="h5" color="inherit">
-                                Sobre nós
+                                Sobre Nós
                             </Typography>
                         </Box>
                     </Link>
@@ -98,7 +107,7 @@ function Navbar() {
                 </div>
                 <script src="app.js"></script>
 
-                <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
+                <Box mx={1} className='cursor btn-sair' onClick={goLogout} >
                     <Typography variant="h5" color="inherit">
                         Sair
                     </Typography>

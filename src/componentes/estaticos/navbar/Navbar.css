@@ -1,37 +1,43 @@
-.cursor
-{
-cursor:pointer;
-color:#ffffff;
+.cursor {
+    cursor: pointer;
+    color: #ffffff;
+    margin: 0 12px !important;
 }
 
-.navCor
-{
+.btn-sair{
+    margin-right: 20px !important;
+}
+
+.navCor {
     background-color: #03051b;
 }
 
-.text-decorator-none
-{
+.text-decorator-none {
     text-decoration: none;
 }
-.logo
-{   background-image:url(https://github.com/ColaboraTechPI/FrontEnd/blob/task12/src/Assets/Img/Logo.png?raw=true);
+
+.logo {
+    background-image: url(https://github.com/ColaboraTechPI/FrontEnd/blob/task12/src/Assets/Img/Logo.png?raw=true);
     min-height: 7vh;
     width: 7vh;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;    
+    background-position: center;
     /* font-size: 60px !important; */
     color: #ffffff;
 }
 
 /* barra de pesquisa */
 .container {
-    margin-left: 20vw!important;
+    margin-left: 20vw !important;
     padding: 10px;
-    margin: 0 auto;
+    margin: 3px auto;
     max-width: 1000px;
     text-align: center;
+    display: flex;
+    align-items: center;
 }
+
 #searchBar {
     width: 30vw;
     height: 32px;
