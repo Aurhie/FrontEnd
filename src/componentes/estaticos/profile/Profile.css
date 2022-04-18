@@ -4,7 +4,7 @@
     align-items: center;
     border-radius: 7px;
     background-color: #03051B;
-    margin: 64px 10px 10px 10px;
+    margin: 10px;
     height: 470px;
     width: 50vh;
 }
@@ -13,7 +13,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
 }
 
 .card-container-info{
@@ -25,8 +24,8 @@
 
 .card-imagem{
     border-radius: 120px;
-    max-width: 220px!important;
-    max-height: 220px!important;
+    max-width: 200px!important;
+    max-height: 200px!important;
     margin: 20px;
 }
 

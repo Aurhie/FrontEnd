@@ -54,10 +54,10 @@ function Home() {
 
                     <Grid xs={9} className='lista-postagem-container'>
                         <TabContext value={value} >
-                            <AppBar position="static" >
+                            <AppBar position="static" className="appbarHome">
                                 <Tabs centered onChange={handleChange} >
-                                    <Tab label="Postagens" value="1" />
-                                    <Tab label="Temas" value="2" />
+                                    <Tab label="Postagens" value="1" className="txtTab" />
+                                    <Tab label="Temas" value="2" className="txtTab" />
                                 </Tabs>
                             </AppBar>
                             <TabPanel value="1" >
