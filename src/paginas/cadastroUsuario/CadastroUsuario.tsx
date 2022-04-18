@@ -204,11 +204,11 @@ function CadastroUsuario() {
 
                         <Box>
                             <Link to='/login' className='text-decorator-none'>
-                                <Button variant='contained' color='secondary' className='btnCancelar'>
+                                <Button variant='contained' color='secondary' className='btnCancelar btnDelColor'>
                                     Cancelar
                                 </Button>
                             </Link>
-                            <Button type='submit' variant='contained' className='btnCadastrar'>
+                            <Button type='submit' variant='contained' className='btnCadastrar btnColor'>
                                 Cadastrar
                             </Button>
                         </Box>
