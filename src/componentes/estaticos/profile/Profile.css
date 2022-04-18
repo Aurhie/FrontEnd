@@ -5,8 +5,7 @@
     border-radius: 7px;
     background-color: #03051B;
     margin: 64px 10px 10px 10px;
-    height: 67vh;
-    /* height: 90% !important; */
+    height: 470px;
     width: 50vh;
 }
 
@@ -14,7 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto;
+    width: 200px;
 }
 
 .card-container-info{
@@ -25,7 +24,6 @@
 }
 
 .card-imagem{
-    /* border-radius: 32px; */
     border-radius: 120px;
     max-width: 220px!important;
     max-height: 220px!important;
