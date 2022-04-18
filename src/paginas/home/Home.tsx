@@ -1,5 +1,5 @@
-import react, { useEffect } from 'react';
-import { Paper, Box, Button, Grid, Typography } from '@material-ui/core';
+import react, { useEffect, useState } from 'react';
+import { Paper, Box, Button, Grid, Typography, AppBar, Tab, Tabs } from '@material-ui/core';
 import ListaPostagem from '../../componentes/postagens/listaPostagem/ListaPostagem';
 import ModalPostagem from '../../componentes/postagens/modalPostagem/ModalPostagem';
 import './Home.css';
@@ -9,47 +9,73 @@ import { UserState } from '../../store/tokens/UserReducer';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Profile from '../../componentes/estaticos/profile/Profile';
+import { TabContext, TabPanel } from '@material-ui/lab';
+import ListaTemaFeed from '../../componentes/temas/listaTema/ListaTemaFeed';
 
 
 function Home() {
 
     let history = useHistory();
-    const token = useSelector < UserState, UserState["tokens"]> (
+    const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
 
-    useEffect(() => {
-        if (token === "") {
-            toast.error('Você precisa estar logado', {
-                position: "top-right",
-                autoClose: 2000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: false,
-                draggable: false,
-                theme: "dark",
-                progress: undefined,
-            });
-            history.push("/login")
+    const [value, setValue] = useState('1')
 
-        }
-    }, [token])
+    function handleChange(event: React.ChangeEvent<{}>, newValue: string) {
+        setValue(newValue);
 
-    return (
-        <>
-        
-            <Grid container direction="row" justifyContent='center' className='corFundo'>
-                <Grid xs={3} className='profile-container'>
-                    <Profile/>
+    }
+
+        useEffect(() => {
+            if (token === "") {
+                toast.error('Você precisa estar logado', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "dark",
+                    progress: undefined,
+                });
+                history.push("/login")
+
+            }
+        }, [token])
+
+        return (
+            <>
+
+                <Grid container direction="row" justifyContent='center' className='corFundo'>
+                    <Grid xs={3} className='profile-container'>
+                        <Profile />
+                    </Grid>
+
+                    <Grid xs={9} className='lista-postagem-container'>
+                        <TabContext value={value} >
+                            <AppBar position="static" >
+                                <Tabs centered onChange={handleChange} >
+                                    <Tab label="Postagens" value="1" />
+                                    <Tab label="Temas" value="2" />
+                                </Tabs>
+                            </AppBar>
+                            <TabPanel value="1" >
+                                <Box justifyContent="center">
+                                    <ListaPostagem />
+                                </Box>
+                            </TabPanel>
+
+                            <TabPanel value="2" >
+                                <Box justifyContent="center">
+                                    <ListaTemaFeed />
+                                </Box>
+                            </TabPanel>
+                        </TabContext>
+                    </Grid>
                 </Grid>
 
-                <Grid xs={9} className='lista-postagem-container'>
-                    <ListaPostagem />
-                </Grid>
-            </Grid>
-
-        </>
-    );
-}
-
+            </>
+        );
+    }
 export default Home;

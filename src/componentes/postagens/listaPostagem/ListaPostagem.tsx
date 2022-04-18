@@ -58,9 +58,7 @@ function ListaPostagem() {
 
     return (
         <>
-            <Typography gutterBottom className="titulo-lista-post">
-                Postagens
-            </Typography>
+
             {
                 postagens.map(postagem => (
                     <Box m={2}>
