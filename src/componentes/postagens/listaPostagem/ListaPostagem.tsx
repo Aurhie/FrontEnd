@@ -115,13 +115,13 @@ function ListaPostagem() {
                                     {postagem.usuario?.id.toString() === userId ?
                                         <><Link to={`/formularioPostagem/${postagem.id}`} className='text-decorator-none'>
                                             <Box mx={1}>
-                                                <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost'>
+                                                <Button variant="contained" disableElevation className='btnAtualizar btnPost btnColor'>
                                                     Atualizar
                                                 </Button>
                                             </Box>
                                         </Link><Link to={`/DeletarPostagem/${postagem.id}`} className='text-decorator-none'>
                                                 <Box mx={1}>
-                                                    <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
+                                                    <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost btnDelColor'>
                                                         Deletar
                                                     </Button>
                                                 </Box>

@@ -100,7 +100,7 @@ function Navbar() {
 
                 <Box mx={1} style={{ cursor: "pointer", color: 'white' }} onClick={goLogout} >
                     <Typography variant="h5" color="inherit">
-                        Logout
+                        Sair
                     </Typography>
                 </Box>
 

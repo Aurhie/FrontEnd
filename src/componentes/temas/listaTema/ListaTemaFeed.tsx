@@ -76,7 +76,7 @@ function ListaTemaFeed() {
                                             <Box display='flex' justifyContent='center' alignItems="center">
                                                 <Link to={`/formularioTema/${tema.id}`} className='text-decorator-none'>
                                                     <Box mx={1}>
-                                                        <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost'>
+                                                        <Button variant="contained" disableElevation color="primary" className='btnAtualizar btnPost btnColor'>
                                                             Atualizar
                                                         </Button>
                                                     </Box>
@@ -84,7 +84,7 @@ function ListaTemaFeed() {
 
                                                 <Link to={`/deletarTema/${tema.id}`} className='text-decorator-none'>
                                                     <Box mx={1}>
-                                                        <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost'>
+                                                        <Button variant="contained" disableElevation color="secondary" className='btnDeletar btnPost btnDelColor'>
                                                             Deletar
                                                         </Button>
                                                     </Box>

@@ -56,3 +56,14 @@
     border-radius: 360px;
     margin: 10px;
 }
+
+.btnColor {
+background-color:#03051b !important;
+color:#FDFCEF !important
+}
+
+.btnDelColor { 
+background-color: #b90a0a !important;
+color:#FDFCEF !important
+
+}
