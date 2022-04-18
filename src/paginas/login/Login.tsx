@@ -103,17 +103,37 @@ function Login() {
 }
 
     return (
-        <Grid container direction='row' justifyContent='center' alignItems='center'>
-            <Grid alignItems='center' xs={6}>
-                <Box paddingX={20}>
+        <Grid  className='login-container'>
+            <Grid alignItems='center' xs={6} >
+                <Box className='lefgrid-container'>
 
-                    <form onSubmit={onSubmit}>
+                    <form onSubmit={onSubmit}  className='form-container'>
                         <Box className='logo-telalogin'>
                             
                         </Box>
 
-                        <TextField value={userLogin.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='usuário' variant='outlined' name='usuario' margin='normal' fullWidth />
-                        <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
+                        <TextField 
+                        value={userLogin.usuario} 
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
+                        id='usuario' 
+                        label='usuário' 
+                        variant='outlined' 
+                        name='usuario' 
+                        margin='normal' 
+                        className='textfields-login' 
+                        fullWidth />
+
+                        <TextField 
+                        value={userLogin.senha} 
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} 
+                        id='senha' 
+                        label='senha' 
+                        variant='outlined' 
+                        name='senha' 
+                        margin='normal' 
+                        type='password'
+                        className='textfields-login' 
+                        fullWidth />
 
                         <Box marginTop={2} textAlign='center'>
 
@@ -135,8 +155,8 @@ function Login() {
 
                 </Box>
             </Grid>
-            <Grid xs={6} className='imagem'>
-
+            <Grid xs={6} className='imagem-container'>
+                <Box className='imagem'/>
             </Grid>
         </Grid>
     )

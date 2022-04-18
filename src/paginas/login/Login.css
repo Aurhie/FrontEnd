@@ -1,18 +1,31 @@
-.textos1 {
-    font-weight: bold !important;
+
+.form-container{
+    display: flex!important;
+    flex-direction: column!important;
+    align-items: center!important;
+    justify-content: center!important;
 }
 
 .imagem {
     background-image: url(https://i.imgur.com/WdnLxdv.png);
     background-repeat: no-repeat;
-    width: 470px;
-    min-height: 150px;
+    width: 500px;
+    min-height: 400px;
     background-size: cover;
     background-position: center;
+    border-radius: 10px;
 }
 
-.text-decorator-none {
-    text-decoration: none;
+.imagem-container{
+    display: flex!important;
+    justify-content: center!important;
+    margin-right: 240px!important;
+    margin-left: 40px!important;
+}
+
+.lefgrid-container{
+    margin-left: 260px!important;
+    margin-right: 40px!important;
 }
 
 .logo-telalogin {
@@ -20,7 +33,29 @@
     background-repeat: no-repeat;
     width: 470px;
     min-height: 150px;
+    margin-bottom: 20px;
     background-size: cover;
     background-position: center;
-    align-items: flex-end;
+    
+}
+
+.login-container{
+    min-height: 100vh!important;
+    display: flex!important;
+    direction: row !important;
+    justify-content:center!important;
+    align-Items:center!important;
+   
+}
+
+.textos1 {
+    font-weight: bold !important;
+}
+
+.textfields-login{
+    width: 110%!important;
+}
+
+.text-decorator-none {
+    text-decoration: none;
 }
