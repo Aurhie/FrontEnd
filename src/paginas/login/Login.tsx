@@ -77,7 +77,7 @@ function Login() {
 
             await login(`/usuarios/logar`, userLogin, setRespUserLogin)
 
-            toast.success('Usúario logado com sucesso!',{
+            toast.success('Usuário logado com sucesso!',{
                 position: 'top-right',
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -137,7 +137,7 @@ function Login() {
 
                         <Box marginTop={2} textAlign='center'>
 
-                            <Button type='submit' variant='contained' color='primary'>
+                            <Button type='submit' variant='contained' className='btn-logar'>
                                 Logar
                             </Button>
 

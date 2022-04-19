@@ -108,16 +108,20 @@ function CadastroUsuario() {
 
 
     return (
-        <Grid container direction="row" justifyContent="center" alignItems="center">
-            <Grid xs={6} className='imagem2'></Grid>
-            <Grid xs={6} alignItems='center'>
-                <Box paddingX={10}>
-                    <form onSubmit={cadastrar}>
-                        <Typography variant='h3'
+        <Grid className='cadastro-container'>
+            <Grid xs={6} className='imagem2-container'>
+                <Box className='imagem2' />
+            </Grid>
+            <Grid alignItems='center' xs={6} >
+                <Box className='rightgrid-container'>
+
+                    <form onSubmit={cadastrar} className='form-container2'>
+
+                        <Typography variant='h4'
                             gutterBottom
                             color="textPrimary"
                             component='h3' align='center'
-                            className="textos">
+                            className="textos2">
                             Cadastrar
                         </Typography>
 
@@ -201,8 +205,7 @@ function CadastroUsuario() {
                             placeholder="Digite novamente a sua senha"
                             fullWidth>
                         </TextField>
-
-                        <Box>
+                        <Box className="btns-box">
                             <Link to='/login' className='text-decorator-none'>
                                 <Button variant='contained' color='secondary' className='btnCancelar btnDelColor'>
                                     Cancelar
@@ -212,13 +215,13 @@ function CadastroUsuario() {
                                 Cadastrar
                             </Button>
                         </Box>
+
                     </form>
                 </Box>
             </Grid>
 
         </Grid>
-    );
-
+    )
 }
 
 export default CadastroUsuario;
