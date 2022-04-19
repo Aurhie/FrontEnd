@@ -36,7 +36,8 @@
 }
 
 .appbarHome{
-    width: 1061px !important;
+    /* width: 1061px !important; */
+    width: 92% !important;
     margin: auto;
     background-color: #03051B !important;
     border-radius: 7px;

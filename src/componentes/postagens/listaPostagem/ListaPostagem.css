@@ -24,8 +24,14 @@
 .titulo-lista-post{
     text-align: center!important;
     font-weight: bold!important;
-    font-size: 30px!important;
-    margin-top: 2vh !important;
+    font-size: 24px!important;
+    background-color: #03051b;
+    color: white;
+    width: 240px !important;
+    margin: auto !important;
+    border-radius: 7px;
+    padding: 6px;
+    margin-bottom: 40px !important;
 }
 
 .tituloPost{
