@@ -52,7 +52,7 @@ function DeletarTema() {
     }
 
     async function sim() {
-        history.push('/temas')
+        history.push('/home')
         deleteId(`/temas/${id}`, {
             headers: {
                 'Authorization': token
@@ -71,7 +71,7 @@ function DeletarTema() {
     }
 
     function nao() {
-        history.push('/temas')
+        history.push('/home')
     }
 
     return (
