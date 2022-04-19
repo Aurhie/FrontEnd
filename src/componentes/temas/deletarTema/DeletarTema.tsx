@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
+import { Box, Button, Card, CardActions, CardContent, Grid, Typography } from '@material-ui/core'
 import { useHistory, useParams } from 'react-router-dom';
 import Tema from '../../../models/Tema';
 import { buscaId, deleteId } from '../../../service/Service';
@@ -14,7 +14,7 @@ function DeletarTema() {
 
     const { id } = useParams<{ id: string }>();
 
-    const token = useSelector < UserState, UserState["tokens"]> (
+    const token = useSelector<UserState, UserState["tokens"]>(
 
         (state) => state.tokens
     );
@@ -23,17 +23,17 @@ function DeletarTema() {
 
     useEffect(() => {
         if (token === "") {
-           toast.error("Você precisa estar logado!", {
-            position: 'top-right',
-            autoClose: 2000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: false,
-            theme: 'dark',
-            progress: undefined
-           });
-           history.push("/login")
+            toast.error("Você precisa estar logado!", {
+                position: 'top-right',
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: 'dark',
+                progress: undefined
+            });
+            history.push("/login")
         }
     }, [token])
 
@@ -52,12 +52,12 @@ function DeletarTema() {
     }
 
     async function sim() {
-       history.push('/temas')
-       deleteId(`/temas/${id}`,{
+        history.push('/temas')
+        deleteId(`/temas/${id}`, {
             headers: {
                 'Authorization': token
             }
-       });
+        });
         toast.success('Tema deletado com sucesso!', {
             position: 'top-right',
             autoClose: 2000,
@@ -67,7 +67,7 @@ function DeletarTema() {
             draggable: false,
             theme: 'dark',
             progress: undefined
-       })
+        })
     }
 
     function nao() {
@@ -76,38 +76,55 @@ function DeletarTema() {
 
     return (
         <>
-            <Box m={2}>
-                <Card variant="outlined">
-                    <CardContent>
-                        <Box justifyContent="center">
-                            <Typography color="textSecondary" gutterBottom>
-                                Deseja deletar o Tema:
-                            </Typography>
-                            <Typography color="textSecondary">
-                                { tema?.descricao }
-                            </Typography>
-                        </Box>
-                    </CardContent>
+            <Grid container direction='row' justifyContent='center' alignItems='center' className='container-deleta-postagens'>
+                <Grid xs={12}>
+                    <Box>
+                        <Typography className='titulo-deleta-tema' variant='h4' gutterBottom>
+                            Deletar Tema
+                        </Typography>
+                        <Typography className='titulo-deleta-tema' variant='h5' gutterBottom>
+                            Tem certeza que deseja deletar este tema?
+                        </Typography>
+                    </Box>
+                </Grid>
+                <Box m={12} className='caixa-cards'>
+                    <Card variant="outlined" className='caixa-post2'>
+                        <CardContent>
 
-                    <CardActions>
-                        <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
-                            <Box mx={2}>
-                                <Button onClick={sim} variant="contained" className="marginLeft btnColor" size='large'>
-                                    Sim
-                                </Button>
-                            </Box>
-                            <Box mx={2}>
-                                <Button onClick={nao} variant="contained" size='large' className="btnDelColor">
-                                    Não
-                                </Button>
-                            </Box>
-                        </Box>
-                    </CardActions>
+                            <Typography variant="h5" component='h2' className="tituloPost">
+                                {tema?.nome}
+                            </Typography>
 
-                </Card>
-            </Box>
+                            <Typography variant="h5" component='h2' className="textoPost">
+                                {tema?.descricao}
+                            </Typography>
+
+                        </CardContent>
+
+                        <CardActions >
+                            <Box display="flex" justifyContent="center" width='100%'>
+                                <Box mx={2}>
+                                    <Button
+                                        onClick={sim}
+                                        className="btnColor">
+                                        Sim
+                                    </Button>
+                                </Box>
+
+                                <Box mx={2}>
+                                    <Button
+                                        onClick={nao}
+                                        className='btnDelColor'>
+                                        Não
+                                    </Button>
+                                </Box>
+                            </Box>
+                        </CardActions>
+                    </Card>
+                </Box>
+            </Grid>
         </>
-    )
+    );
 }
 
 export default DeletarTema

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
+import {Typography, Button, Box, Card, CardActions, CardContent, Grid } from "@material-ui/core"
 import './DeletarPostagem.css';
 import { useHistory, useParams } from 'react-router-dom';
 import Postagem from '../../../models/Postagem';
@@ -49,7 +49,7 @@ function DeletarPostagem() {
         }
 
     async function sim() {
-            history.push('/postagens')
+            history.push('/home')
             try {
                await deleteId(`/postagens/${id}`, {
                 headers: { "Authorization": token }
@@ -82,38 +82,79 @@ function DeletarPostagem() {
           function nao() {
             history.push('/home')
           }
-  return (
-    <>
-      <Box m={2}>
-        <Card variant="outlined" >
-          <CardContent>
-            <Box justifyContent="center">
-              <Typography color="textSecondary" gutterBottom>
-                Deseja deletar a Postagem:
-              </Typography>
-              <Typography color="textSecondary" >
-              {post?.titulo}
-              </Typography>
-            </Box>
+          return (
+            <>
+              <Grid container direction='row' justifyContent='center' alignItems='center' className='container-deleta-postagens'>
+                <Grid xs={12}>
+                  <Box>  
+                    <Typography className='titulo-deleta-postagem' variant='h4' gutterBottom>
+                      Deletar Postagem
+                    </Typography>
+                    <Typography className='titulo-deleta-postagem' variant='h5' gutterBottom>
+                      Tem certeza que deseja deletar esta postagem?
+                    </Typography>
+                  </Box>
+                </Grid>
+                <Box m={12} className='caixa-cards'>
+                  <Card variant='outlined' className="caixa-post">
+                            <CardContent>
 
-          </CardContent>
-          <CardActions>
-            <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
-              <Box mx={2}>
-              <Button onClick={sim} variant="contained" className="marginLeft btnColor" size='large'>
-                Sim
-              </Button>
-              </Box>
-              <Box>
-              <Button  onClick={nao} variant="contained" size='large' className = "btnDelColor">
-                Não
-              </Button>
-              </Box>
-            </Box>
-          </CardActions>
-        </Card>
-      </Box>
-    </>
-  );
-}
+                                <Box className="user-data">
+                                    <img src={post?.usuario?.foto} className='user-picture' />
+
+                                    <Box>
+                                        <Typography variant='h5' component='h2' className="tituloPost">
+                                            {post?.usuario?.nome}
+                                            <br />
+                                        </Typography>
+                                        <Typography variant="body2" component="p" className='data-postagem'>
+                                            {post?.data.substring(8, 10) + '/' +
+                                                post?.data.substring(5, 7) + '/' +
+                                                post?.data.substring(0, 4) + ' às ' +
+                                                post?.data.substring(11, 19)}
+                                        </Typography>
+                                    </Box>
+
+                                </Box>
+
+                                <Typography variant='h5' component='h2' className="tituloPost">
+                                    {post?.titulo}
+                                </Typography>
+
+
+                                <Typography variant='body2' component='p' className="textoPost">
+                                    {post?.texto}
+                                </Typography>
+                            </CardContent>
+        
+                    <CardActions>
+                      <Box display="flex" justifyContent="center" width='100%'>
+                        <Box mx={2}>
+                          <Button
+                            onClick={sim}
+                            variant="contained"
+                            className="btnColor"
+                            size='large'
+                            color="primary">
+                            Sim
+                          </Button>
+                        </Box>
+        
+                        <Box>
+                          <Button
+                            onClick={nao}
+                            variant="contained"
+                            size='large'
+                            className="btnDelColor">
+                            Não
+                          </Button>
+                        </Box>
+                      </Box>
+                    </CardActions>
+                  </Card>
+                </Box>
+              </Grid>
+            </>
+          );
+        }
 export default DeletarPostagem;
